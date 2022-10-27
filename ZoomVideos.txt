@@ -1,4 +1,6 @@
-Day 1 AM session -- https://techelevator.zoom.us/rec/share/62d967VYVm8uJgN7Aa9LYqdmkqjTAfpq1FkEGnBd2CnXqJsg37JW4NIfbvOHpHgl.9SFYJpzktVEpah-R
-Day 1 PM session -- https://techelevator.zoom.us/rec/share/r8pac4uI3ug6CyKm4bz42xVu_pHBobcHe119vn9MOdUyjEDc86wtUn8u69vUEyfQ.XeNRrEqyha42y2xM
-M1D2 -- https://techelevator.zoom.us/rec/share/eWOPSXpyc2Op-YVIvW49oPVvxDzN1GBuhWVE8ElLfmL6STt6U9sVXRV3wt1nJXBQ.IjAF2hPsx89uxMB4
-M1D3 -- https://techelevator.zoom.us/rec/share/zQK8gegam68Eif8fn-tOpn8c_uoSbjubUBabhYVjEIL3nxtaJbqvs2tGuo-ZL7Wa.UE7zKXkCwVgBa6Xq
+Day 1 AM session -- Orientation to class -https://techelevator.zoom.us/rec/share/62d967VYVm8uJgN7Aa9LYqdmkqjTAfpq1FkEGnBd2CnXqJsg37JW4NIfbvOHpHgl.9SFYJpzktVEpah-R
+Day 1 PM session -- Command Line - https://techelevator.zoom.us/rec/share/r8pac4uI3ug6CyKm4bz42xVu_pHBobcHe119vn9MOdUyjEDc86wtUn8u69vUEyfQ.XeNRrEqyha42y2xM
+M1D2 -- Data types and Variables - https://techelevator.zoom.us/rec/share/eWOPSXpyc2Op-YVIvW49oPVvxDzN1GBuhWVE8ElLfmL6STt6U9sVXRV3wt1nJXBQ.IjAF2hPsx89uxMB4
+M1D3 -- Logical Branching - https://techelevator.zoom.us/rec/share/zQK8gegam68Eif8fn-tOpn8c_uoSbjubUBabhYVjEIL3nxtaJbqvs2tGuo-ZL7Wa.UE7zKXkCwVgBa6Xq
+M1D4 -- Loops and Arrays - https://techelevator.zoom.us/rec/share/Mxt7201bBIzS34elT3U7gB87in-MNMb0s9ifpjs53eM54VsA4gb9ahoaD9rvMrVd.KtoSBWhwckJKkg3v
+
