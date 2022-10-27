@@ -133,7 +133,7 @@ public class Lecture {
 
         //     Start;       Keep going while         Increment by one;
         for (int i = 0; i < arrayToLoopThrough.length; i++) {
-            counter = counter + 1;
+            counter++;
         }
 
         return counter == 5;
