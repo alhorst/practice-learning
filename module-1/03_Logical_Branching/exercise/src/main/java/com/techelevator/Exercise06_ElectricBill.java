@@ -8,7 +8,7 @@ public class Exercise06_ElectricBill {
         Anything more than the basic service limit is $0.25 per unit (excess service rate).
     The following problems have you calculate a customer's total for their energy usage.
      */
-
+    // ((100 * 0.20) + ((units over 100 - 100) * 0.25))
     // You can use these constants in your solutions.
     private final double BASIC_SERVICE_RATE = 0.20;
     private final double BASIC_SERVICE_LIMIT = 100.0;
@@ -24,7 +24,14 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(110) ➔ 22.5
      */
     public double calculateElectricBill(double unitsUsed) {
-        return 0;
+        if (unitsUsed <= BASIC_SERVICE_LIMIT) {
+            return unitsUsed * BASIC_SERVICE_RATE;
+        }
+        else if (unitsUsed > BASIC_SERVICE_LIMIT) {
+            return ((BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((unitsUsed - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE));
+        } else {
+            return 0;
+        }
     }
 
     /*
@@ -40,7 +47,27 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(110, true) ➔ 21.375
      */
     public double calculateElectricBill(double unitsUsed, boolean hasRenewableEnergy) {
-        return 0;
+        double overageCost = ((BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((unitsUsed - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE));
+        double regularCost = unitsUsed * BASIC_SERVICE_RATE;
+
+        double overageDiscount = overageCost * RENEWABLE_ENERGY_DISCOUNT;
+        double regularDiscount = regularCost * RENEWABLE_ENERGY_DISCOUNT;
+
+        if (unitsUsed <= BASIC_SERVICE_LIMIT) {
+            if (hasRenewableEnergy) {
+                return regularCost - regularDiscount;
+            } else {
+                return unitsUsed * BASIC_SERVICE_RATE;
+            }
+        } else if (unitsUsed > BASIC_SERVICE_LIMIT) {
+            if (hasRenewableEnergy) {
+                return overageCost - overageDiscount;
+            } else {
+                return overageCost;
+            }
+        } else {
+            return 0;
+        }
     }
 
     /*
@@ -59,13 +86,33 @@ public class Exercise06_ElectricBill {
 
     Examples:
     calculateElectricBill(50, 0) ➔ 10.0
+    50 * .20
     calculateElectricBill(50, 4) ➔ 8.74
+    (50 - 4) = 46 * .20 = 9.2 (9.2 * .05 = .46) 9.2 - .46
     calculateElectricBill(50, 60) ➔ -2.0
+    50 - 60 = -10 * .20 = -2
     calculateElectricBill(110, 6) ➔ 19.95
+    110 - 6 = 104 > (100 * .20) = 20 (+ 4 * .25) = 21 then discount 21 - 1.05
     calculateElectricBill(110, 20) ➔ 17.1
     calculateElectricBill(110, 120) ➔ -2.0
+    110 - 120 = -10 * .20
+    (10, 0) > 2.0
+    10 * .2
      */
     public double calculateElectricBill(double unitsUsed, double unitsReturned) {
-        return 0;
-    }
+        double netUsage = unitsUsed - unitsReturned;
+        double electricBill = 0;
+        double discount = 1 - RENEWABLE_ENERGY_DISCOUNT;
+
+        if (netUsage <= BASIC_SERVICE_LIMIT) {
+            electricBill = netUsage * BASIC_SERVICE_RATE;
+        }
+        else {
+            electricBill = ((BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((netUsage - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE));
+        }
+        if (netUsage > 0 && unitsReturned > 0) {
+            electricBill *= discount;
+        }
+            return electricBill;
+        }
 }

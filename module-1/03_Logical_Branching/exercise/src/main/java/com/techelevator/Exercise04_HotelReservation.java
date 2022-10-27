@@ -24,7 +24,15 @@ public class Exercise04_HotelReservation {
     calculateStayTotal(3) ➔ 269.97
      */
     public double calculateStayTotal(int numberOfNights) {
-        return 0;
+        if (numberOfNights < 3) {
+            return numberOfNights * DAILY_RATE;
+        }
+        else if (numberOfNights >= 3) {
+            return numberOfNights * DISCOUNT_RATE;
+        }
+        else {
+            return 0;
+        }
     }
 
     /*
@@ -42,7 +50,18 @@ public class Exercise04_HotelReservation {
     calculateStayTotal(3, 2) ➔ 289.97
      */
     public double calculateStayTotal(int numOfTotalNights, int numOfWeekendNights) {
-        return 0;
+        if (numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE && numOfWeekendNights > 0) {
+            return ((numOfTotalNights - numOfWeekendNights) * DISCOUNT_RATE) + (numOfWeekendNights * DAILY_RATE);
+        }
+        else if (numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE && numOfWeekendNights == 0) {
+            return numOfTotalNights * DISCOUNT_RATE;
+        }
+        else if (numOfTotalNights < 3 || numOfWeekendNights <= 1 ){
+            return numOfTotalNights * DAILY_RATE;
+        }
+        else {
+            return 0;
+        }
     }
 
     /*
@@ -60,6 +79,20 @@ public class Exercise04_HotelReservation {
     calculateStayTotal(3, 1, true) ➔ 269.97
      */
     public double calculateStayTotal(int numOfTotalNights, int numOfWeekendNights, boolean isRewardsMember) {
-        return 0;
+        if (isRewardsMember) {
+            return numOfTotalNights * DISCOUNT_RATE;
+        }
+        else if (numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE && numOfWeekendNights > 0) {
+            return ((numOfTotalNights - numOfWeekendNights) * DISCOUNT_RATE) + (numOfWeekendNights * DAILY_RATE);
+        }
+        else if (numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE && numOfWeekendNights == 0) {
+            return numOfTotalNights * DISCOUNT_RATE;
+        }
+        else if (numOfTotalNights < 3 || numOfWeekendNights <= 1 ){
+            return numOfTotalNights * DAILY_RATE;
+        }
+        else {
+            return 0;
+        }
     }
 }

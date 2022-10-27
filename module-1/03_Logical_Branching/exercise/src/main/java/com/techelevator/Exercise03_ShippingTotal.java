@@ -22,7 +22,15 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45) ➔ 23.75
      */
     public double calculateShippingTotal(int weightPounds) {
-        return 0;
+        if (weightPounds <= MAX_WEIGHT_POUNDS) {
+            return weightPounds * UP_TO_40_LB_RATE;
+        }
+        else if (weightPounds > MAX_WEIGHT_POUNDS) {
+            return ((MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE) + ((weightPounds - MAX_WEIGHT_POUNDS) * OVER_40_LB_RATE));
+        }
+        else {
+            return 0;
+        }
     }
 
     /*
@@ -38,9 +46,28 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45, true) ➔ 21.375
      */
     public double calculateShippingTotal(int weightPounds, boolean hasDiscount) {
-        return 0;
-    }
+        double priceOfShippingSmall = (weightPounds * UP_TO_40_LB_RATE);
+        double priceOfShippingLarge = ((MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE) + ((weightPounds - MAX_WEIGHT_POUNDS) * OVER_40_LB_RATE));
+        double dollarsOffSmall = priceOfShippingSmall * 0.10;
+        double dollarsOffLarge = priceOfShippingLarge * 0.10;
 
+        if (weightPounds <= MAX_WEIGHT_POUNDS && hasDiscount) {
+            return (priceOfShippingSmall - dollarsOffSmall);
+        }
+        else if (weightPounds <= MAX_WEIGHT_POUNDS) {
+            return priceOfShippingSmall;
+        }
+        else if (weightPounds > MAX_WEIGHT_POUNDS && hasDiscount) {
+            return (priceOfShippingLarge - dollarsOffLarge);
+        }
+        else if (weightPounds > MAX_WEIGHT_POUNDS) {
+            return priceOfShippingLarge;
+        }
+        else {
+            return 0;
+        }
+    }
+//discount is calculated by price * .10 = dollarsOff price - dollarsOff
     /*
     As the business grows for Scamper Shipping Company, they now offer discounts in various amounts.
     Implement the logic to calculate the shipping rate when provided a weight in pounds
@@ -53,6 +80,19 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45, 0.2) ➔ 19.0
      */
     public double calculateShippingTotal(int weightPounds, double discountPercentage) {
-        return 0;
+        double priceOfShippingSmall = (weightPounds * UP_TO_40_LB_RATE);
+        double priceOfShippingLarge = ((MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE) + ((weightPounds - MAX_WEIGHT_POUNDS) * OVER_40_LB_RATE));
+        double dollarsOffSmall = priceOfShippingSmall * discountPercentage;
+        double dollarsOffLarge = priceOfShippingLarge * discountPercentage;
+
+        if (weightPounds <= MAX_WEIGHT_POUNDS) {
+            return (priceOfShippingSmall - dollarsOffSmall);
+        }
+        else if (weightPounds > MAX_WEIGHT_POUNDS) {
+            return (priceOfShippingLarge - dollarsOffLarge);
+        }
+        else {
+            return 0;
+        }
     }
 }
