@@ -17,7 +17,7 @@ public class Exercise03_Shirts {
     buildOrder() → ['S', 'S', 'S', 'M', 'M', 'L']
      */
     public char[] buildOrder() {
-        return new char[] {};    
+        return new char[]{SMALL_TSHIRT, SMALL_TSHIRT, SMALL_TSHIRT, MEDIUM_TSHIRT, MEDIUM_TSHIRT, LARGE_TSHIRT};
     }
 
     /*
@@ -36,8 +36,24 @@ public class Exercise03_Shirts {
     buildBulkOrder(4) → ['S', 'M', 'L', 'S']
     buildBulkOrder(0) → []
      */
-    public char[] buildBulkOrder(int numberOfShirts) { 
-        return new char[] {};    
+    public char[] buildBulkOrder(int numberOfShirts) {
+    char[]shirtOrder = new char[numberOfShirts]; //make new array for shirts
+        int shirtCount = 1; //three sizes, [1]=S, [2]=M, [3]=L, can't be 0 because that's for empty
+
+        for (int i = 0; i < shirtOrder.length; i++) {
+            if (shirtCount > 3) { //send it back to 1 to start counting SML again
+                shirtCount = 1;
+            }
+            if (shirtCount == 3) {
+                shirtOrder[i] = 'L';
+            } else if (shirtCount == 2) {
+                shirtOrder[i] = 'M';
+            } else if (shirtCount == 1) {
+                shirtOrder[i] = 'S';
+            }
+            shirtCount++; // one two three one two three
+        }
+        return shirtOrder;
     }
 
     /*
@@ -54,6 +70,12 @@ public class Exercise03_Shirts {
     placeRequest([]) → false
      */
     public boolean placeRequest(char[] order) {
-        return false; 
+        boolean smallShirt = false;
+        for (int i = 0; i < order.length; i++) {
+            if (order[i] == 'S') {
+                smallShirt= true;
+                break;
+            }
+        } return smallShirt;
     }
 }

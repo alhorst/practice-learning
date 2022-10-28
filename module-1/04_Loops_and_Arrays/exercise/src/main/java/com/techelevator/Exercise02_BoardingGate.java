@@ -24,7 +24,12 @@ public class Exercise02_BoardingGate {
     generateSeatingChart(2) → [true, true]
      */
     public boolean[] generateSeatingChart(int numberOfSeats) {
-        return new boolean[] {};
+        boolean[] arraySeats = new boolean[numberOfSeats];//make new array for seats
+
+        for (int i = 0; i < arraySeats.length; i++) {
+            arraySeats[i] = true;
+        }
+        return arraySeats;
     }
 
     /*
@@ -41,7 +46,14 @@ public class Exercise02_BoardingGate {
     getAvailableSeatCount([]) → 0
      */
     public int getAvailableSeatCount(boolean[] seatingChart) {
-        return 0;
+        int freeSeats = 0;
+
+        for (int i = 0; i < seatingChart.length; i++) {
+            if (seatingChart[i] == true) {
+                freeSeats++;
+            }
+        }
+        return freeSeats;
     }
 
     /*
@@ -53,11 +65,32 @@ public class Exercise02_BoardingGate {
 
     Examples:
     getNumberOfFullRows([false, false, false, true, true, true]) → 1
-    getNumberOfFullRows([true, true, true, true, true, true]) → 2
+    getNumberOfFullRows([true, true, true, true, true, true]) → 0
     getNumberOfFullRows([false, true, true, false, true, true]) → 0
      */
     public int getNumberOfFullRows(boolean[] seatingChart) {
-        return 0;
-    }
 
+        int rowFull = 0; //initialize is the row full?
+        int seatCount = 1; //initialize our seat count 1 2 3
+        int falseCount = 0; //the row is only full if the false count is 3
+
+        for (int i = 0; i < seatingChart.length; i++) {
+
+            if (seatCount > 3) { //if seat count is greater than 3, set it back to 1 and reset our false counter
+                seatCount = 1;
+                falseCount = 0;
+            }
+            if (!seatingChart[i]) { //looking for false condition, use negation (instead of false) so it enters the if
+                falseCount++; //if we find a false, increment the counter by one
+            }
+            if (falseCount == 3 && seatCount == 3) { //if false count and seat count are both 3 the row is full
+                rowFull++;
+            }
+
+            seatCount++; //increment our seat counter by 1
+        }
+
+            return rowFull;
+    }
 }
+

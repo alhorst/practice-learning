@@ -17,12 +17,15 @@ public class Exercise01_StoreOrders {
 
     // You can use these constants in your solutions.
     private final int SMALL_CHEESE = 10;
+    private final double SM_CHEESE_PRICE = 8.00;
     private final int SMALL_PEPPERONI = 11;
 
     private final int MEDIUM_CHEESE = 20;
+    private final double MD_CHEESE_PRICE = 11.00;
     private final int MEDIUM_PEPPERONI = 21;
 
     private final int LARGE_CHEESE = 30;
+    private final double LG_CHEESE_PRICE = 14.00;
     private final int LARGE_PEPPERONI = 31;
 
     private final int CALZONE = 40;
@@ -43,7 +46,7 @@ public class Exercise01_StoreOrders {
 	 createOrder() → [10, 40, 31, 41]
      */
     public int[] createOrder() {
-        return new int[] {};
+        return new int[] {SMALL_CHEESE, CALZONE, LARGE_PEPPERONI, SPAGHETTI_PIE};
     }
 
     /*
@@ -58,7 +61,14 @@ public class Exercise01_StoreOrders {
     getCalzoneSales([]) → 0
      */
     public int getCalzoneSales(int[] orders) {
-        return 0;
+        int totalCalzoneSales = 0;
+
+        for (int i = 0; i < orders.length; i++) {
+            if (orders[i] == CALZONE) {
+                totalCalzoneSales++;
+            }
+        }
+        return totalCalzoneSales;
     }
 
     /*
@@ -76,6 +86,23 @@ public class Exercise01_StoreOrders {
     getCheesePizzaRevenue([11, 21]) → 0
      */
     public int getCheesePizzaRevenue(int[] orders) {
-        return 0;
+        int totalPrice = 0; //sum of pizza prices
+        int totalSmPrice = 0; //sum of smalls
+        int totalMdPrice = 0; //sum of meds
+        int totalLgPrice = 0; //sum of larges
+
+        for (int i = 0; i < orders.length; i++) {
+            if (orders[i] == SMALL_CHEESE) {
+                totalSmPrice += SM_CHEESE_PRICE;
+            }
+            if (orders[i] == MEDIUM_CHEESE) {
+                totalMdPrice += MD_CHEESE_PRICE;
+            }
+            if (orders[i] == LARGE_CHEESE) {
+                totalLgPrice += LG_CHEESE_PRICE;
+            }
+            totalPrice = (totalSmPrice + totalMdPrice + totalLgPrice);
+        }
+        return totalPrice;
     }
 }
