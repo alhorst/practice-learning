@@ -3,4 +3,5 @@ Day 1 PM session -- Command Line - https://techelevator.zoom.us/rec/share/r8pac4
 M1D2 -- Data types and Variables - https://techelevator.zoom.us/rec/share/eWOPSXpyc2Op-YVIvW49oPVvxDzN1GBuhWVE8ElLfmL6STt6U9sVXRV3wt1nJXBQ.IjAF2hPsx89uxMB4
 M1D3 -- Logical Branching - https://techelevator.zoom.us/rec/share/zQK8gegam68Eif8fn-tOpn8c_uoSbjubUBabhYVjEIL3nxtaJbqvs2tGuo-ZL7Wa.UE7zKXkCwVgBa6Xq
 M1D4 -- Loops and Arrays - https://techelevator.zoom.us/rec/share/Mxt7201bBIzS34elT3U7gB87in-MNMb0s9ifpjs53eM54VsA4gb9ahoaD9rvMrVd.KtoSBWhwckJKkg3v
+M1D5 -- Command Line - https://techelevator.zoom.us/rec/share/u5ifxND53Xew3tbB85Yptr7rPyzXcRWE-8Z1s270UiPVNSK9AlMqpCf-WfZG2xk.5P-hUUcaGTpJ58p0
 
