@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 class DiscountCalculator {
     public static double calculateDiscount(double price, double discount) {
-        /*double dollarsOff = 0;
-        double discountPrice = 0;*/
         double dollarsOff = price * discount;
         double discountPrice = price - dollarsOff;
 
