@@ -4,4 +4,5 @@ M1D2 -- Data types and Variables - https://techelevator.zoom.us/rec/share/eWOPSX
 M1D3 -- Logical Branching - https://techelevator.zoom.us/rec/share/zQK8gegam68Eif8fn-tOpn8c_uoSbjubUBabhYVjEIL3nxtaJbqvs2tGuo-ZL7Wa.UE7zKXkCwVgBa6Xq
 M1D4 -- Loops and Arrays - https://techelevator.zoom.us/rec/share/Mxt7201bBIzS34elT3U7gB87in-MNMb0s9ifpjs53eM54VsA4gb9ahoaD9rvMrVd.KtoSBWhwckJKkg3v
 M1D5 -- Command Line - https://techelevator.zoom.us/rec/share/u5ifxND53Xew3tbB85Yptr7rPyzXcRWE-8Z1s270UiPVNSK9AlMqpCf-WfZG2xk.5P-hUUcaGTpJ58p0
+M1D6 -- Objects with Strings - https://techelevator.zoom.us/rec/share/BEGrwNOAHXQh7hpDZzHlpi2KiRHYH1htLPBLgY0CuN9N92QAjs8lkZ0XAMpgc9VY.vN0XG7B0_5whcWKp
 
