@@ -128,7 +128,7 @@ public class Exercises {
 				newList.add("Fizz");//replace int with "Fizz"
 			} else if (num % 5 == 0) {
 				newList.add("Buzz");//replace int with "Buzz"
-			}else{
+			}else {
 				newList.add(num.toString());
 			}
 		}
@@ -144,7 +144,8 @@ public class Exercises {
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
 		List<Integer> combinedList = new ArrayList<>();
-		int largestSize;
+		int largestSize;							//this is a very long way to do it, could figure out how to interleave, but couldn't add longer list
+													//integers to the end of the new shorter list. so added this largestSize int...but this would take forever to run on a large list size
 		if (listOne.size() > listTwo.size()) {
 			largestSize = listOne.size();
 		} else {
@@ -154,7 +155,7 @@ public class Exercises {
 			if (i < listOne.size()) {
 				combinedList.add(listOne.get(i));
 			}
-			if(i < listTwo.size()){
+			if (i < listTwo.size()) {
 				combinedList.add(listTwo.get(i));
 			}
 		}
