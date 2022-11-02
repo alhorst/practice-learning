@@ -146,7 +146,7 @@ public class Exercises {
 		List<Integer> combinedList = new ArrayList<>();
 		int largestSize;							//this is a very long way to do it, could figure out how to interleave, but couldn't add longer list
 													//integers to the end of the new shorter list. so added this largestSize int...but this would take forever to run on a large list size
-		if (listOne.size() > listTwo.size()) {
+		if (listOne.size() > listTwo.size()) {			//suggestions: no int largestSize, for i <listOne.size || sizeTwo.size, margaret used ternary for my first if (listOne.size() > listTwo.size())? listOne.size() : listTwo.size()!!!
 			largestSize = listOne.size();
 		} else {
 			largestSize = listTwo.size();
