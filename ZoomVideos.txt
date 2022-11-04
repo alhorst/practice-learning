@@ -8,3 +8,4 @@ M1D6 -- Objects with Strings - https://techelevator.zoom.us/rec/share/BEGrwNOAHX
 M1D7 -- Collections P1 - Lists - https://techelevator.zoom.us/rec/share/ZYzMW96EfNeaedCgDaObUpAcdHvaGuYekq3mUN7NfeqRI1Mf5dvqQgfXoexUUgZh.e7IKB_nczJ6O-NjJ
 M1D8 -- Collections P2 - Maps - https://techelevator.zoom.us/rec/share/Dm6XDPkRmbSrW0IpkJDtRjgrcGJug3OgLXDvYTFeTv2qXIj3uUJSctFSEegt-rUJ.EJNUrsOYpZabcK1C
 M1D9 -- Encapsulation - https://techelevator.zoom.us/rec/share/sB2bG_HKxGvPWolBni9tCzKHp-KbYC5Zo70SVEjXEqWcndyMUkxvnRBAIcvki36H.MUipIaSoEbm1KXLG
+M1D10 -- Review - https://techelevator.zoom.us/rec/share/1oZwnH0IiUKNaToXSji0VpVK5_7JMvTQZ-57S9xWbfyi-wVzvqop3uid2fxEdZPC.WMUay5z7XU49D4zG
