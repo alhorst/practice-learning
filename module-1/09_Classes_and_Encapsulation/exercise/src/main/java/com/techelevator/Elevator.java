@@ -36,7 +36,7 @@ public class Elevator {
 
     public void goUp(int desiredFloor) {
         if (!doorOpen) {
-            if (desiredFloor <= numberOfFloors) {
+            if (desiredFloor <= numberOfFloors && desiredFloor > currentFloor) {
                 this.currentFloor = desiredFloor;
             }
         }
@@ -44,7 +44,7 @@ public class Elevator {
 
     public void goDown(int desiredFloor) {
         if (!doorOpen) {
-            if (desiredFloor >= 1) {
+            if (desiredFloor >= 1 && desiredFloor < currentFloor) {
                 this.currentFloor = desiredFloor;
             }
         }
