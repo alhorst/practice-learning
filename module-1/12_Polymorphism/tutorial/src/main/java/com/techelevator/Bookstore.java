@@ -32,6 +32,8 @@ public class Bookstore {
         Movie airplane = new Movie("Airplane!", "PG", 88, 14.99);
         shoppingCart.add(airplane);
 
+        Coffee myCoffee = new Coffee("Extra-large", "Dark Roast", new String[] {"Creme"}, 3.99);
+        shoppingCart.add(myCoffee);
         System.out.println(shoppingCart.receipt());
     }
 }
