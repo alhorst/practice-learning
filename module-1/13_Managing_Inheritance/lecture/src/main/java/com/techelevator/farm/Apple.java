@@ -11,4 +11,9 @@ public class Apple implements Sellable{
         return pricePerApple;
         // return (new BigDecimal("0.49"));
     }
+
+    @Override
+    public String getName() {
+        return "Apple";
+    }
 }

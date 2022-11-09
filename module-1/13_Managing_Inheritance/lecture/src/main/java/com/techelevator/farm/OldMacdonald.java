@@ -1,6 +1,7 @@
 package com.techelevator.farm;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,9 +11,10 @@ public class OldMacdonald {
 
 		FarmAnimal[] farmAnimals =
 				new FarmAnimal[] { new Cow(), new Chicken(),
-				new Sheep(), new Pig()};
+				new Sheep(), new Pig(), new CAt()};
 
 		for (FarmAnimal animal : farmAnimals) {
+			animal.sleep();
 			String name = animal.getName();
 			String sound = animal.getSound();
 			System.out.println("Old MacDonald had a farm, ee, ay, ee, ay, oh!");
@@ -38,13 +40,14 @@ public class OldMacdonald {
 		System.out.println("Let's buy some stuff");
 
 		Sellable item = new Apple();
-		System.out.println("This item sells for " + item.getPrice());
+		System.out.println("This " + item.getName() + "sells for " + item.getPrice());
 
 		item = new Tractor();
-		System.out.println("New items sells for " + item.getPrice());
+		System.out.println("This " + item.getName() + "sells for " + item.getPrice().setScale(2, RoundingMode.HALF_DOWN));
 
 		// cannot instantiate a singable object
-//		Singable singable = new Singable();
+		//Singable singable = new Singable();
+		FarmAnimal farmAnimal = new Cow();
 	}
 
 	// write a method, cannot be nested
