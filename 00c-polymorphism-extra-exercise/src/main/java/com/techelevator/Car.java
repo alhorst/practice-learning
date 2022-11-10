@@ -15,7 +15,7 @@ public class Car implements Vehicle {
     @Override
     public double calculateToll(int distance) {
         double toll = distance * 0.020;
-        if (hasTrailer) {
+        if (isHasTrailer()) {
             toll += 1.00;
         }
         return toll;
