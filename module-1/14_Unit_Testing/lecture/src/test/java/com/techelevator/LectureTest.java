@@ -7,6 +7,9 @@ import org.junit.Test; // The @Test annotation is used to label methods that sho
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /* Like all other Java code, unit testing code is defined within a class.
  * Each test class will typically contain all of the unit tests for a single
  * "unit" of production code.
@@ -19,6 +22,9 @@ import org.junit.runners.MethodSorters;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LectureTest {
+
+	Lecture lecture = new Lecture();
+
 
 	/* If a method is annotated with @Before, it will be executed immediately prior to every test.
 	 * It is intended to be used when there is a repetitive setup (i.e. "Arrange") task that is
@@ -99,5 +105,75 @@ public class LectureTest {
 
 	public void this_method_is_not_a_test_because_it_does_not_have_the_Test_annotation() {
 		// This method will not be run by Junit, because it's not a test
+	}
+
+	@Test
+	public void test_or35_send_in_15_returns_true() {
+		//Arrange
+		boolean expected = true;
+
+		//Act
+		boolean actual = lecture.or35(15);
+
+		//Assert
+		Assert.assertEquals(expected, actual);
+	}
+
+	@Test
+	public void test_or35_send_in_6_returns_true() {
+
+		boolean actual = lecture.or35(6);
+
+		Assert.assertTrue(actual);
+	}
+
+	@Test
+	public void test_or35_send_in_2_returns_true() {
+
+		boolean actual = lecture.or35(2);
+
+		Assert.assertFalse(actual);
+	}
+
+	/*@Test
+	public void test_doubleNumber_send_in_3_return_3() {
+
+		int actual = lecture.doubleNumber(3);
+
+		Assert.assertEquals(3);
+
+
+	}*/
+
+	@Test
+	public void test_doubleAllNumbers_send_in_2_3_4_return_4_5_8() {
+		//Arrange
+		int [] expected = {4, 6, 8};
+		int [] test = {2, 3, 4};
+		//Act
+		int [] actual = lecture.doubleAllNumbers(test);
+		//Assert
+		Assert.assertArrayEquals(expected, actual);
+	}
+
+	@Test
+	public void test_robPeterToPayPaul_send_in_map_Peter_has_2000_and_Paul_has_50_return_Peter_1000_and_Paul_1050() {
+		//Arrange
+		Map<String, Integer> expected = new HashMap<>();
+		expected.put("Peter" ,1000);
+		expected.put("Paul", 1050);
+		//Act
+		Map<String, Integer> test = new HashMap<>();
+		test.put("Peter", 2000);
+		test.put("Paul", 50);
+
+		Map<String, Integer> actual = lecture.robPeterToPayPaul(test);
+		Integer actualPeter = actual.get("Peter");
+		Integer actualPaul = actual.get("Paul");
+		Integer expectedPeter = expected.get("Peter");
+		Integer expectedPaul = expected.get("Paul");
+		//Assert
+		Assert.assertEquals(expectedPeter, actualPeter);
+		Assert.assertEquals(expectedPaul, actualPaul);
 	}
 }
