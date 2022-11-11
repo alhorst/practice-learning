@@ -175,5 +175,6 @@ public class LectureTest {
 		//Assert
 		Assert.assertEquals(expectedPeter, actualPeter);
 		Assert.assertEquals(expectedPaul, actualPaul);
+
 	}
 }
