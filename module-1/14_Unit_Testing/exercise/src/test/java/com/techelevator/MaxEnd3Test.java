@@ -2,8 +2,6 @@ package com.techelevator;
 
 import org.junit.*;
 
-import static org.junit.Assert.*;
-
 public class MaxEnd3Test {
 
     MaxEnd3 maxEnd3 = new MaxEnd3();
@@ -44,12 +42,26 @@ public class MaxEnd3Test {
     //outofbounds
     @Test(expected = IndexOutOfBoundsException.class)
     public void test_makeArray_four_nums() {
-        //Is this test helpful? It would look at 1 and 4 but there should only be 3 allowed
+        //Is this test helpful? It would look at 1 and 4 but there should only be 3 ints allowed, technically not
+        //index out of bounds per the code, but per the instructions... is it?
         int [] expected = {3, 3, 3};
         int [] test = {1, 2, 3, 4};
+
+        int[] actual = maxEnd3.makeArray(test);
+
+        Assert.assertArrayEquals(expected, actual);
     }
 
     //big first
     @Test()
+    public void test_makeArray_big_first() {
+        //I've run out of test ideas...
+        int [] expected = {15, 15, 15};
+        int [] test = {15, 10, 12};
+
+        int[] actual = maxEnd3.makeArray(test);
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 
 }
