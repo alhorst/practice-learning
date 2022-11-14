@@ -11,6 +11,21 @@ public class RTNValidator {
 	public static void main(String[] args)  {
 
 		printApplicationBanner();
+		try {
+			File inputFile = getInputFileFromUser();
+			try (Scanner inputScanner = new Scanner(inputFile)) {
+				while (inputScanner.hasNextLine()) {
+					String lineInput = inputScanner.nextLine();
+					lineInput = lineInput.trim(); //can use trim or can use substring
+
+					if(!checksumIsValid(lineInput)) {
+						System.out.println("Invalid checksum: " + lineInput);
+					} 
+				}
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found or unable to be read from.");;
+		}
 
 
 	}
@@ -23,8 +38,10 @@ public class RTNValidator {
 	}
 
 	@SuppressWarnings("resource")
-	private static File getInputFileFromUser() {
-		return null;
+	private static File getInputFileFromUser() throws FileNotFoundException {
+		System.out.print("What is the file path?");
+		Scanner userInput = new Scanner(System.in);
+		return new File(String.valueOf(userInput));
 	}
 
 	private static boolean checksumIsValid(String routingNumber) {
