@@ -14,3 +14,4 @@ M1D12 -- Polymorphism - https://techelevator.zoom.us/rec/share/-u61UWlhy2Vzn8XKD
 M1D13 -- Managing Inheritance - https://techelevator.zoom.us/rec/share/-zAqhvOfaGYXNZpZmxvwTHTogCFu3NRUFUqoyTDYzU8H_f0pfc1q9S0wVHMR4Lw7.qV1kfZuxwEqUoto5
 M1D14 -- Unit Testing - https://techelevator.zoom.us/rec/share/3ViOBVcxVAO-ZsuaIzvEKB6sjzAOaxI02f0kiRxN6EcXhjdBZb7vLhQfY0FQwj1N.QwBfkQi3xdtZhfuS
 M1D15 -- Review -- https://techelevator.zoom.us/rec/share/m6M7fqPvJMKbeM-v0AsUoMMj41BejgDFOfIsJnYfF6_3wBMM5oTm12xijAmJhWbN.o3oKd_HLmq7dzFQa
+M1D16 -- Exceptions and File IO - https://techelevator.zoom.us/rec/share/k6MNhpzkfFDyhDDkJDqaQ87NRPnqgZ4QdvRhD4Qbu6aHo7Z27-u89XPhbdRTsvj_.vGR8_tSKFEg22A_7
