@@ -1,0 +1,3 @@
+Chocolate,1.19
+Cream Stick,1.89
+Sprinkled,1.19
