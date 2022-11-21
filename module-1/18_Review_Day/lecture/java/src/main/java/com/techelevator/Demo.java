@@ -23,7 +23,7 @@ public class Demo {
         donutList.add(filledStick);
 
         for (Donut donut : donutList) {
-            System.out.println(donut);
+            System.out.printf("%-15s $%8.2f\n", donut.getType(), donut.getPrice());
         }
     }
 }
