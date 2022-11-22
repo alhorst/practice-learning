@@ -100,8 +100,9 @@ SELECT COUNT(city_name) AS cities,
 -- Determine the average park area depending upon whether parks allow camping or not.
 SELECT park_name, ROUND(AVG(area), 2) AS average_area
    FROM park
-   WHERE has_camping = true
-   GROUP BY park_name, has_camping;
+   WHERE has_camping = true OR has_camping = false
+   GROUP BY park_name, has_camping
+   ORDER BY average_area DESC;
 
 -- Sum of the population of cities in each state ordered by state abbreviation.
 SELECT SUM(population) AS all_cities_population,
