@@ -20,3 +20,4 @@ M1D18 -- Review - https://techelevator.zoom.us/rec/share/YUOP58RvDYpILsMPQnKyPe2
 M1D19 -- Capstone kickoff - https://techelevator.zoom.us/rec/share/byLXOK7PWlXPGjnEBhzCc13dNeHbW6ePBsxYFsZcK678Y6EDpXIo9U_fSF32oLsD.mef4xTPMaKIA330u
 M2D1 -- Intro to Databases - https://techelevator.zoom.us/rec/share/6bA-xKqPg8pKSWSo9CVNTqRTT-G8Hjv-fIE2tLO0L_MLNeh_XOcU2KvI9aaFWgzn.QEW9TOn-k86PZZme
 M2D2 -- Order and Group - https://techelevator.zoom.us/rec/share/-2wGDOrPfj-CwTt7eOMfWKmKPyFtpuV1AQoly5LY1o-kr8lobH0-6lXNX-JWA4kQ.9xGu4XedEarM05rq
+M2D3 -- Joins - https://techelevator.zoom.us/rec/share/hTTKhgyg8PU_AvEkKzw5OtLPUB1mJWdHpuEzSW_2wApKh1WN6hCpYvU36yRnj-rF.SR-5N3p7mOHHtrP4
