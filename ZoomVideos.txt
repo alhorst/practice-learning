@@ -18,4 +18,5 @@ M1D16 -- Exceptions and File IO - https://techelevator.zoom.us/rec/share/k6MNhpz
 M1D17 -- File Writing - https://techelevator.zoom.us/rec/share/YXUswLwKzh_wALl74f7aLAbOUdqvPFtSLf8BB2Cz5GGnmQGw9BHpdYhjYgmkCmwF.izizeCImaVAamBkL
 M1D18 -- Review - https://techelevator.zoom.us/rec/share/YUOP58RvDYpILsMPQnKyPe2oyN63dJxJce5n-tZw0xhfdbTndu-a01-Lq4XfvPs-.Nmkhw3-JShIqd7iB
 M1D19 -- Capstone kickoff - https://techelevator.zoom.us/rec/share/byLXOK7PWlXPGjnEBhzCc13dNeHbW6ePBsxYFsZcK678Y6EDpXIo9U_fSF32oLsD.mef4xTPMaKIA330u
-M1D1 -- Intro to Databases - https://techelevator.zoom.us/rec/share/6bA-xKqPg8pKSWSo9CVNTqRTT-G8Hjv-fIE2tLO0L_MLNeh_XOcU2KvI9aaFWgzn.QEW9TOn-k86PZZme
+M2D1 -- Intro to Databases - https://techelevator.zoom.us/rec/share/6bA-xKqPg8pKSWSo9CVNTqRTT-G8Hjv-fIE2tLO0L_MLNeh_XOcU2KvI9aaFWgzn.QEW9TOn-k86PZZme
+M2D2 -- Order and Group - https://techelevator.zoom.us/rec/share/-2wGDOrPfj-CwTt7eOMfWKmKPyFtpuV1AQoly5LY1o-kr8lobH0-6lXNX-JWA4kQ.9xGu4XedEarM05rq
