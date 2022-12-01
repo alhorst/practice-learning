@@ -46,27 +46,41 @@ public class JdbcParkDao implements ParkDao {
 
     @Override
     public Park createPark(Park park) {
-        return new Park();
+        String sql = "INSERT INTO park (park_name, date_established, area, has_camping) " +
+                     "VALUES (?, ?, ?, ?) RETURNING park_id;";
+        Integer parkId = jdbcTemplate.queryForObject(sql, Integer.class, park.getParkName(), park.getDateEstablished(),
+                     park.getArea(), park.getHasCamping());
+        park.setParkId(parkId);
+        return park;
     }
 
     @Override
     public void updatePark(Park park) {
-
+        String sql = "UPDATE park SET name = ? " +
+                     "WHERE park_id = ?;";
+        jdbcTemplate.update(sql, park.getParkName(), park.getParkId());
     }
 
     @Override
     public void deletePark(int parkId) {
+        String sql = "DELETE FROM park WHERE park_id = ?;";
+        jdbcTemplate.update(sql, parkId);
 
     }
 
     @Override
     public void addParkToState(int parkId, String stateAbbreviation) {
+        String sql = "INSERT INTO park_state (park_id, state_abbreviation) " +
+                     "VALUES (?, ?) RETURNING park_id;";
+        jdbcTemplate.update(sql, parkId, stateAbbreviation);
 
     }
 
     @Override
     public void removeParkFromState(int parkId, String stateAbbreviation) {
-
+        String sql = "DELETE FROM park_state WHERE park_id = ? " +
+                     "AND state_abbreviation = ?;";
+        jdbcTemplate.update(sql, parkId, stateAbbreviation);
     }
 
     // helper method
