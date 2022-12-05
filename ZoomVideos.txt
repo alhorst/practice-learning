@@ -25,3 +25,5 @@ M2D4 -- Insert, Update, Delete - https://techelevator.zoom.us/rec/share/kZ2ZtEfQ
 M2D5 -- Designing DBs - https://techelevator.zoom.us/rec/share/vt2OhMj04k0RVtJ01r4RfzuL2x7ut0oRNaHoQ7xQDggtXOHccxs37RXL0sMw08ux.jnx17pN7E0T6nTSn
 M2D6 -- DAOs - https://techelevator.zoom.us/rec/share/yjcukclT5d1IovZc3gRKp2HZ6vMnomSu4Td0TcH32z5lKaG8_oRSdZSkqlyUwr1-.vSMgwbRs64WDtbGt
 M2D7 -- Security - https://techelevator.zoom.us/rec/share/BK3CbLTjt7pU9l_hoV6Dqbqhi5xlLaUqhSaZcIlJcevoosee7Bg2TvCi-kYXALAL.RImL58jLcLcGwyd6
+M2D8 -- Testing - https://techelevator.zoom.us/rec/share/ZejNI6Ki4sGmzzeqXIaM-bwhS_zWodhd_ftOg4bgw2kT9SlylweuoxWMKCjkJf-N.KAbaaB30nFysylxB
+
