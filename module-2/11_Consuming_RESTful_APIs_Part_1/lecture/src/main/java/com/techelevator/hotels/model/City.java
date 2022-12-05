@@ -8,6 +8,7 @@ public class City {
     private String fullName;
     @JsonProperty("geoname_id")
     private int geonameId;
+    private long population;
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
@@ -21,9 +22,17 @@ public class City {
         return fullName;
     }
 
+    public long getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(long population) {
+        this.population = population;
+    }
+
     @Override
     public String toString(){
-        return fullName;
+        return "Name: " + fullName + "\nId: " + geonameId + "\npopulation: " + population;
     }
 
 }
