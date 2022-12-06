@@ -31,7 +31,7 @@ public class HotelService {
         return (restTemplate.getForObject(API_BASE_URL + "hotels/" + hotelID + "/reviews", Review[].class));
     }
 
-    public Hotel[] getHotelsByStarRating(int stars) {  //"reviews?stars=" + stars
+    public Hotel[] getHotelsByStarRating(int stars) {  //"hotels?stars=" + stars
         return (restTemplate.getForObject(API_BASE_URL + "hotels/" + stars, Hotel[].class));
     }
 
