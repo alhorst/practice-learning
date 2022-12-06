@@ -107,8 +107,18 @@ public class ConsoleService {
     }
 
     private Reservation makeReservation(String csv) {
-        Reservation reservation = null;
-        // TODO -- turn the csv into a Reservation object!
+        Reservation reservation = new Reservation();
+        String[] array = csv.split(", ");
+        int hotelID = Integer.parseInt(array[0].trim()); //trim removes extra whitespace
+        String fullName = array[1].trim();
+        String checkInDate = array[2].trim();
+        String checkOutDate = array[3].trim();
+        int numberOfGuests = Integer.parseInt(array[4].trim());
+        reservation.setHotelId(hotelID);
+        reservation.setFullName(fullName);
+        reservation.setCheckinDate(checkInDate);
+        reservation.setCheckoutDate(checkOutDate);
+        reservation.setGuests(numberOfGuests);
         return reservation;
     }
 
