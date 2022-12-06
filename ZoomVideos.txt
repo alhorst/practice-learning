@@ -27,4 +27,4 @@ M2D6 -- DAOs - https://techelevator.zoom.us/rec/share/yjcukclT5d1IovZc3gRKp2HZ6v
 M2D7 -- Security - https://techelevator.zoom.us/rec/share/BK3CbLTjt7pU9l_hoV6Dqbqhi5xlLaUqhSaZcIlJcevoosee7Bg2TvCi-kYXALAL.RImL58jLcLcGwyd6
 M2D8 -- Testing - https://techelevator.zoom.us/rec/share/ZejNI6Ki4sGmzzeqXIaM-bwhS_zWodhd_ftOg4bgw2kT9SlylweuoxWMKCjkJf-N.KAbaaB30nFysylxB
 M2D9 -- Consuming APIs P1 - https://techelevator.zoom.us/rec/share/opW0QQRshyX0MD9eqHZxn8ccZst4u8UYCwaT33kJfXEWJ4ACgNDwHCg7Um75hyi8.Yo01dcRocgCYH7dv
-
+M2D10 -- Consuming APIs P2 - https://techelevator.zoom.us/rec/share/nRQ8XAcZ7PF8eydQxOl-tUwRnE6xRd7aLE7dFPhsCOiEINdtuLMrgQQzAe3x5buz.f5I58nNfjh4TsiF2
