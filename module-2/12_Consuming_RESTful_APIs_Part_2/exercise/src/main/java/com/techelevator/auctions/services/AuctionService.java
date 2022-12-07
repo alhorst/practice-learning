@@ -12,7 +12,7 @@ import com.techelevator.auctions.model.Auction;
 
 public class AuctionService {
 
-    public static final String API_BASE_URL = "http://localhost:3000/auctions/";
+    public static String API_BASE_URL = "http://localhost:3000/auctions/";
     private RestTemplate restTemplate = new RestTemplate();
 
 
