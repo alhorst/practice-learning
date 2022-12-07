@@ -7,6 +7,7 @@ import com.techelevator.reservations.dao.ReservationDao;
 import com.techelevator.reservations.model.Hotel;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HotelController {
@@ -38,6 +39,26 @@ public class HotelController {
     @RequestMapping(path = "/hotels/{id}", method = RequestMethod.GET)
     public Hotel get(@PathVariable int id) {
         return hotelDao.get(id);
+    }
+
+    @RequestMapping(path = "hotels/filter", method = RequestMethod.GET)
+    public List<Hotel> getHotelsFilteredByStateAndCity(@RequestParam String state,
+                                                       @RequestParam (required = false)String city) {
+        List<Hotel> allHotels = list();
+        List<Hotel> filteredHotels = new ArrayList<>();
+
+        for (Hotel hotels : allHotels) {
+            if (city != null) {
+                if (hotels.getAddress().getCity().equalsIgnoreCase(city)) {
+                    filteredHotels.add(hotels);
+                }
+            } else {
+                if (hotels.getAddress().getState().equalsIgnoreCase(state)) {
+                    filteredHotels.add(hotels);
+                }
+            }
+        }
+        return filteredHotels;
     }
 
 }
