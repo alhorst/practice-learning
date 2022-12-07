@@ -5,6 +5,8 @@ import com.techelevator.auctions.model.Auction;
 import java.util.Locale;
 import java.util.Scanner;
 
+import static java.lang.Double.parseDouble;
+
 public class ConsoleService {
 
     private final Scanner scanner = new Scanner(System.in);
@@ -52,7 +54,7 @@ public class ConsoleService {
         System.out.print("Enter the maximum price to search for: ");
         // Catch invalid input, and set price to 0.0 if it happens.
         try {
-            price = Double.parseDouble(scanner.nextLine());
+            price = parseDouble(scanner.nextLine());
         }
         catch (NumberFormatException e) {
             price = 0.0;
@@ -116,7 +118,14 @@ public class ConsoleService {
     }
 
     private Auction makeAuction(String csv) {
-        Auction auction = null;
+        Auction auction =  new Auction();
+        String[] array = csv.split(", ");
+
+        auction.setId(Integer.parseInt(array[0].trim()));
+        auction.setTitle(array[1].trim());
+        auction.setDescription(array[2].trim());
+        auction.setUser(array[3].trim());
+        auction.setCurrentBid(parseDouble(array[4].trim()));
         return auction;
     }
 

@@ -12,20 +12,50 @@ import com.techelevator.auctions.model.Auction;
 
 public class AuctionService {
 
-    public static final String API_BASE_URL = "http://localhost:3000/auctions/";
+    public static String API_BASE_URL = "http://localhost:3000/auctions/";
     private RestTemplate restTemplate = new RestTemplate();
 
 
     public Auction add(Auction newAuction) {
-        return null;
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<Auction> entity = new HttpEntity<>(newAuction, headers);
+
+        Auction returnedAuction = null;
+        try {
+            returnedAuction = restTemplate.postForObject(API_BASE_URL, entity, Auction.class);
+        } catch (RestClientResponseException e) {
+            BasicLogger.log("Error: " + e.getRawStatusCode() + ": " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log("Error: " + e.getMessage());
+        }
+        return returnedAuction;
     }
 
     public boolean update(Auction updatedAuction) {
-        return false;
+        boolean success = false;
+        try {
+            restTemplate.put(API_BASE_URL + updatedAuction.getId(), makeEntity(updatedAuction));
+            success = true;
+        } catch (RestClientResponseException e) {
+            BasicLogger.log("Error: " + e.getRawStatusCode() + ": " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log("Error: " + e.getMessage());
+        }
+        return success;
     }
 
     public boolean delete(int auctionId) {
-        return false;
+        boolean success = false;
+        try {
+            restTemplate.delete(API_BASE_URL + auctionId);
+            success = true;
+        } catch (RestClientResponseException e) {
+            BasicLogger.log("Error: " + e.getRawStatusCode() + ": " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log("Error: " + e.getMessage());
+        }
+        return success;
     }
 
 
@@ -80,7 +110,10 @@ public class AuctionService {
     }
 
     private HttpEntity<Auction> makeEntity(Auction newAuction) {
-        return null;
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON); // what will be sent will be in JSON format
+        HttpEntity<Auction> entity = new HttpEntity<>(newAuction, headers);
+        return entity;
     }
 
 }
