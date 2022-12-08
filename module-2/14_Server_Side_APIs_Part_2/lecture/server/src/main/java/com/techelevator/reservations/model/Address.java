@@ -12,11 +12,17 @@ public class Address {
     private String zip;
 
     public Address() {
-        setId();
+        if (id == null) {
+            setId();
+        }
     }
 
-    public Address(String address, String address2, String city, String state, String zip) {
-        setId();
+    public Address(String id, String address, String address2, String city, String state, String zip) {
+        if (id == null){
+            setId();
+        } else {
+            this.id = id;
+        }
         this.address = address;
         this.address2 = address2;
         this.city = city;
