@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface HotelDao {
 
-    List<Hotel> list();
+    List<Hotel> list(); //read
 
-    void create(Hotel hotel);
+    void create(Hotel hotel); //create
 
-    Hotel get(int id);
+    Hotel get(int id); //read
 
 }
