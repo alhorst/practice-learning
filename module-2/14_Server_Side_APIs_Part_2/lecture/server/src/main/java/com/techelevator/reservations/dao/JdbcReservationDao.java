@@ -12,8 +12,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Component
-public class JdbcReservationDao implements  ReservationDao{
+@Component
+public class JdbcReservationDao implements ReservationDao{
 
     JdbcTemplate jdbcTemplate;
     public JdbcReservationDao(JdbcTemplate jdbcTemplate) {

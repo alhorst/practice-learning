@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component //this is how Spring knows who implements HotelDao...HotelDao hotelDao in HotelController will look for @Component
 public class MemoryHotelDao implements HotelDao {
 
     private List<Hotel> hotels = new ArrayList<>();

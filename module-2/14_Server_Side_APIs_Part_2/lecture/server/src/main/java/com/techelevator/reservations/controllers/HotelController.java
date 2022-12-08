@@ -5,23 +5,26 @@ import com.techelevator.reservations.dao.ReservationDao;
 import com.techelevator.reservations.model.Hotel;
 import com.techelevator.reservations.model.Reservation;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class HotelController {
-
-    private HotelDao hotelDao;
+    @Autowired //let Spring wire this component and interface for me, don't need constructor when using
+    private HotelDao hotelDao; //interface
+    @Autowired
     private ReservationDao reservationDao;
 
-    public HotelController(HotelDao hotelDao, ReservationDao reservationDao) {
+   /* public HotelController(HotelDao hotelDao, ReservationDao reservationDao) {
         this.hotelDao = hotelDao;
         this.reservationDao = reservationDao;
-    }
+    }*/
 
     /**
      * Return All Hotels
@@ -98,9 +101,36 @@ public class HotelController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/reservations", method = RequestMethod.POST)
-    public Reservation addReservation(@RequestBody Reservation reservation) {
+    public Reservation addReservation(@Valid @RequestBody Reservation reservation) {
         return reservationDao.create(reservation, reservation.getHotelID());
     }
+
+    /** Update a reservation
+     * @param reservation
+     * @param reservationId
+     * @return the updated reservation
+     */
+    @RequestMapping(path = "/reservations/{id}", method = RequestMethod.PUT)
+    public Reservation updateReservation(@Valid @PathVariable ("id") int reservationId, @RequestBody Reservation reservation) {
+        Reservation updatedReservation = reservationDao.update(reservation, reservationId);
+        if (reservation.getId() != reservationId) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "IDs do not match.");
+        } else {
+            return updatedReservation;
+        }
+    }
+
+    /**
+     * Delete a reservation
+     * @param id - reservation
+     */
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @RequestMapping(path = "reservations/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable int id) {
+        reservationDao.delete(id);
+    }
+
 
     /**
      * /hotels/filter?state=oh&city=cleveland
@@ -120,14 +150,13 @@ public class HotelController {
 
             // if city was passed we don't care about the state filter
             if (city != null) {
-                if (hotel.getAddress().getCity().toLowerCase().equals(city.toLowerCase())) {
+                if (hotel.getAddress().getCity().equalsIgnoreCase(city)) {
                     filteredHotels.add(hotel);
                 }
             } else {
-                if (hotel.getAddress().getState().toLowerCase().equals(state.toLowerCase())) {
+                if (hotel.getAddress().getState().equalsIgnoreCase(state)) {
                     filteredHotels.add(hotel);
                 }
-
             }
         }
 

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.techelevator.reservations.model.Hotel;
 import com.techelevator.reservations.model.Reservation;
 
-@Component
+//@Component
 public class MemoryReservationDao implements ReservationDao {
 
     private List<Reservation> reservations = new ArrayList<>();
@@ -100,6 +100,21 @@ public class MemoryReservationDao implements ReservationDao {
         // when using foreach we must remove the item after iterating to avoid a ConcurrentModificationException
         reservations.remove(target);
     }
+
+    /*
+    @Override
+    public boolean delete(int id) {
+        Reservation target = null;
+        for (Reservation reservation: reservations) {
+            if (reservation.getId() == id {
+                target = reservation;
+
+            }
+        }
+        reservations.remove(target);
+
+
+     */
 
     private void initializeReservationData() {
         LocalDate now = LocalDate.now();
