@@ -4,7 +4,7 @@ import javax.validation.constraints.NotBlank;
 
 public class CatCard {
 
-    private int id;
+    private int catCardId;
     @NotBlank(message = "You must enter an image URL.")
     private String imgUrl;
     @NotBlank(message = "You must enter a cat fact.")
@@ -15,8 +15,8 @@ public class CatCard {
     public CatCard() {
     }
 
-    public int getId() {
-        return id;
+    public int getCatCardId() {
+        return catCardId;
     }
 
     public String getImgUrl() {
@@ -31,8 +31,8 @@ public class CatCard {
         return caption;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCatCardId(int catCardId) {
+        this.catCardId = catCardId;
     }
 
     public void setImgUrl(String imgUrl) {
@@ -50,7 +50,7 @@ public class CatCard {
     @Override
     public String toString() {
         return "CatCard{" +
-                "id=" + id +
+                "id=" + catCardId +
                 ", imgUrl='" + imgUrl + '\'' +
                 ", catFact='" + catFact + '\'' +
                 ", caption='" + caption + '\'' +

@@ -46,24 +46,27 @@ public class JdbcCatCardDao implements CatCardDao {
                 "VALUES (?, ?, ?) RETURNING cat_card_id";
         Integer returnedId = jdbcTemplate.queryForObject(sql, Integer.class, catCard.getImgUrl(),
                 catCard.getCatFact(), catCard.getCaption());
-        CatCard returnedCatCard = getCatCardById(returnedId);
-        return returnedCatCard;
+        return getCatCardById(returnedId);
     }
 
     @Override
-    public CatCard updateCatCard(CatCard catCard, int id) {
-        //String sql = "UPDATE catcards SET img_url = ? "
-        return null;
+    public CatCard updateCatCard(CatCard updatedCatCard, int id) {
+        String sql = "UPDATE catcards SET caption = ? " +
+                "WHERE cat_card_id = ?";
+        jdbcTemplate.update(sql, id, updatedCatCard.getImgUrl(), updatedCatCard.getCatFact(),
+                updatedCatCard.getCaption());
+        return updatedCatCard;
     }
 
     @Override
-    public boolean deleteCatCard(int id) {
-        return false;
+    public void deleteCatCard(int id) {
+        String sql = "DELETE FROM catcards WHERE cat_card_id = ?";
+        jdbcTemplate.update(sql, id);
     }
 
     private CatCard mapRowToCatCard(SqlRowSet results) {
         CatCard catCard = new CatCard();
-        catCard.setId(results.getInt("cat_card_id"));
+        catCard.setCatCardId(results.getInt("cat_card_id"));
         catCard.setImgUrl(results.getString("img_url"));
         catCard.setCatFact(results.getString("cat_fact"));
         catCard.setCaption(results.getString("caption"));

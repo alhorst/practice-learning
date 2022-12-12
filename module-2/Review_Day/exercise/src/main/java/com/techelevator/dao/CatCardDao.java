@@ -14,5 +14,5 @@ public interface CatCardDao {
     //UPDATE
     CatCard updateCatCard(CatCard catCard, int id);
     //DELETE
-    boolean deleteCatCard(int id);
+    void deleteCatCard(int id);
 }
