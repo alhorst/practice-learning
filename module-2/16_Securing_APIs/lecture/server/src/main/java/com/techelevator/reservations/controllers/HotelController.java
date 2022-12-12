@@ -7,14 +7,17 @@ import com.techelevator.reservations.dao.ReservationDao;
 import com.techelevator.reservations.model.Hotel;
 import com.techelevator.reservations.model.Reservation;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@PreAuthorize("isAuthenticated()")
 public class HotelController {
 
     private HotelDao hotelDao;
@@ -30,6 +33,7 @@ public class HotelController {
      *
      * @return a list of all hotels in the system
      */
+    @PreAuthorize("permitAll") //note here permitAll doesn't require ( ) after it like isAuthenticated
     @RequestMapping(path = "/hotels", method = RequestMethod.GET)
     public List<Hotel> list() {
         return hotelDao.list();
@@ -56,6 +60,7 @@ public class HotelController {
      *
      * @return all reservations
      */
+    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(path = "/reservations", method = RequestMethod.GET)
     public List<Reservation> listReservations() {
         return reservationDao.findAll();
@@ -126,10 +131,12 @@ public class HotelController {
      *
      * @param id
      */
+    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @RequestMapping(path = "/reservations/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable int id) {
+    public void delete(@PathVariable int id, Principal principal) { //use Principal, name variable whatever, to see WHO is doing this action
         reservationDao.delete(id);
+        auditLog("delete", id, principal.getName());
     }
 
     /**
