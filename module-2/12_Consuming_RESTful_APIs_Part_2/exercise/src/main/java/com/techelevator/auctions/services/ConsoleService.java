@@ -2,7 +2,6 @@ package com.techelevator.auctions.services;
 
 import com.techelevator.auctions.model.Auction;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 import static java.lang.Double.parseDouble;
@@ -94,19 +93,30 @@ public class ConsoleService {
 
     public Auction promptForAuctionData(Auction existingAuction) {
         Auction newAuction = null;
+        String data = null;
         while (newAuction == null) {
             System.out.println("--------------------------------------------");
-            System.out.println("Enter auction data as a comma separated list containing:");
-            System.out.println("title, description, user, current bid price (without dollar sign)");
+            System.out.println("Enter auction data below!");
+            //System.out.println("title, description, user, current bid price (without dollar sign)");
             if (existingAuction != null) {
                 System.out.println("Auction " + existingAuction.getId() + " Data: " + existingAuction.getTitle() +
                         ", " + existingAuction.getDescription() + ", " + existingAuction.getUser() + ", " +
                         existingAuction.getCurrentBid());
             } else {
-                System.out.println("Example: Mad-dog Sneakers, Soles check. Laces check., Cierra_Pagac, 125.23");
+                System.out.println("Auction Title: ");
+                String auctionTitle = scanner.nextLine();
+                System.out.println("Description: ");
+                String auctionDescription = scanner.nextLine();
+                System.out.println("User: ");
+                String userName = scanner.nextLine();
+                System.out.println("Current Bid: ");
+                double currentBid = scanner.nextDouble();
+
+                data = auctionTitle +", "+ auctionDescription +
+                        ", "+ userName +", "+ currentBid;
             }
             System.out.println("--------------------------------------------");
-            newAuction = makeAuction(scanner.nextLine());
+            newAuction = makeAuction(data);
             if (newAuction == null) {
                 System.out.println("Invalid entry. Please try again.");
             }
@@ -117,11 +127,11 @@ public class ConsoleService {
         return newAuction;
     }
 
-    private Auction makeAuction(String csv) {
+    private Auction makeAuction(String data) {
         Auction auction =  new Auction();
-        String[] array = csv.split(", ");
+        String[] array = data.split(", ");
 
-        auction.setId(Integer.parseInt(array[0].trim()));
+        //auction.setId(Integer.parseInt(array[0].trim()));
         auction.setTitle(array[1].trim());
         auction.setDescription(array[2].trim());
         auction.setUser(array[3].trim());
