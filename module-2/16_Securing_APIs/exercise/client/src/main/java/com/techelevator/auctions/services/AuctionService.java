@@ -33,7 +33,7 @@ public class AuctionService {
     public Auction getAuction(int id) {
         Auction auction = null;
         try {
-            ResponseEntity<Auction> response = restTemplate.exchange(API_BASE_URL, HttpMethod.GET,
+            ResponseEntity<Auction> response = restTemplate.exchange(API_BASE_URL + id, HttpMethod.GET,
                     makeAuthEntity(), Auction.class);
             auction = response.getBody();
         } catch (RestClientResponseException | ResourceAccessException e) {
