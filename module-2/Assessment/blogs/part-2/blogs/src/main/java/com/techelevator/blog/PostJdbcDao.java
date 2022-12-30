@@ -17,14 +17,24 @@ public class PostJdbcDao implements PostDao {
 
 	@Override
 	public void save(Post newPost) {
-		// Implement this method to save post to database
+		String sql = "INSERT INTO posts (name, body, published, created) " +
+				"VALUES (?, ?, ?, ?) RETURNING id";
+		Long postId = jdbcTemplate.queryForObject(sql, Long.class, newPost.getName(), newPost.getBody(),
+				newPost.isPublished(), newPost.getCreated());
+
+		newPost.setId(postId);
 	}
 
 	@Override
 	public List<Post> getAllPosts() {
-		// Implement this method to pull in all posts from database
+		List<Post> posts = new ArrayList<>();
+		String sql = "SELECT * FROM posts";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+		while (results.next()) {
+			posts.add(mapRowToPost(results));
+		}
 
-		return null;
+		return posts;
 	}
 
 	private Post mapRowToPost(SqlRowSet results) {
