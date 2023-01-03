@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Bits & Bytes Restaraunt</title>
+</head>
+
+<body>
+     <header>
+          <h1>Bits & Bytes</h1>
+          <p>Welcome to the Internet's best restaraunt!</p>
+     </header>
+     <main>
+          <h2>Menu</h2>
+          <h3>Lunch</h3>
+          <p>Full Stack Sandwich</p>
+          <img src="images/menu/lunch/full-stack-sandwich.png" alt="large sandwich">
+          <p>USBurger</p>
+          <img src="images/menu/lunch/USBurger.png" alt="burger-shaped USB stick">
+
+          <h3>Dinner</h3>
+          <p>Array of Vegetables</p>
+          <img src="images/menu/dinner/array-of-vegetables.png" alt="group of vegetables">
+          <p>Rack of RAM</p>
+          <img src="images/menu/dinner/rack-of-ram.png" alt="sticks of RAM">
+     </main>
+     <h2>Reservation Form</h2>
+     <form action="/api/reservation" method="post">
+          <div>
+               <p>
+                    <label for="reservationName">Reservation Name:</label>
+                    <input id="reservationName" type="text">
+               </p>
+          </div>
+          <div>
+               <p>
+                    <label for="numberOfGuests">Number of Guests:</label>
+                    <input id="numberOfGuests" type="number">
+               </p>
+          </div>
+          <div>
+               <p>
+                    <label for="reservationDate">Reservation Date:</label>
+                    <input type="date" id="reservationDate">
+               </p>
+          </div>
+          <div>
+               <p>
+                    <label for="reservationTime">Reservation Time:</label>
+                    <input id="reservationTime" type="time">
+
+               </p>
+          </div>
+
+     </form>
+
+</body>
+
+</html>
