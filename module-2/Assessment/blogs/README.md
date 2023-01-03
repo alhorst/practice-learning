@@ -33,7 +33,7 @@ If you finish before the end of the time-box, please be respectful of those stil
 1. Pull from your class repository like you do for code every day. The assessment is in the module-2 folder of your class repo folder.
 2. Open the project in the Module_2_Coding_Assessment folder.
 3. You should see two folders: a `part-1` and a `part-2`.
-4. Begin with `part-1`. Enter that folder in your command line and run `sh import-databases.sh`.
+4. Begin with `part-1`. Enter that folder in your command line and run `winpty sh import-databases.sh`.
 5. Fill out the `solution.sql` file with the correct SQL statements to satisfy the requirements.
 6. `part-2` represents a DAO project that you will finish. Complete the `DAO` class and use the unit tests to check the correctness of the methods.
 7. Be sure to push your final effort when you are done or at the end of the time-box.
