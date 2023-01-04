@@ -1,0 +1,30 @@
+body {
+     display: flex;
+     justify-content: center;
+     background-color: #000000;
+     color: white;
+     font-family: 'Open Sans', sans-serif;
+     font-family: 'Special Elite', cursive;
+     font-size: 120%;
+}
+
+form {
+     padding: 10px;
+     background-color: black;
+}
+
+input[type=text] [type=date] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     box-sizing: border-box;
+     background-color: white;
+     color: black;
+
+}
+
+input[type=submit] {
+     background-color: green;
+     border: none;
+     color: white;
+}

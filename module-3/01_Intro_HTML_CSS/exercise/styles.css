@@ -1,0 +1,73 @@
+body {
+     text-align: center;
+     background-color: #000000;
+     font-family: 'Open Sans', sans-serif;
+     font-family: 'Special Elite', cursive;
+     font-size: 120%;
+}
+
+h1 {
+     color: white;
+     text-align: center;
+}
+
+h2 {
+     color: white;
+     text-align: center;
+     text-decoration: underline white;
+}
+
+p {
+     color: white;
+     text-align: center;
+}
+
+blockquote {
+     color: white;
+     text-align: center;
+     font-style: italic;
+}
+
+table,
+th,
+td {
+     color: white;
+     border: 1px solid white;
+     border-collapse: collapse;
+}
+
+th,
+td {
+     padding: 10px;
+}
+
+a {
+     text-align: center;
+}
+
+a:link {
+     color: white;
+     background-color: transparent;
+     text-decoration: none;
+}
+
+a:hover {
+     color: rgb(200, 200, 200);
+     background-color: transparent;
+     text-decoration: underline;
+}
+
+a:visited {
+     color: rgb(200, 200, 200);
+     background-color: transparent;
+     text-decoration: none;
+}
+
+footer {
+     font-size: 75%;
+}
+
+img {
+     max-width: 400px;
+     height: auto;
+}
