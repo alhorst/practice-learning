@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* called internal css or styling */
+        /* control / and VSC will give you the correct comment format */
+        body {
+            background-color: coral;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Hello everyone!</h1>
+    </header>
+    <p style="background-color: blueviolet;">Reservation <span style="background-color: chartreuse;">Form</span></p>
+    <form action="http://example.com" method="POST">
+        <div>
+            <label for="reservationName">Reservation Name:</label>
+            <!-- name attribute is the key in the JSON format -- what the user types in the input box will be the value -->
+            <input type="text" name="name" id="reservationName">
+        </div>
+        <!-- this is what a comment looks like in html -->
+        <div>
+            <label for="numberOfGuests">Number of Guests:</label>
+            <input type="number" id="numberOfGuests" name="numberOfGuests">
+        </div>
+
+    </form>
+
+
+    <div>
+        Here is some text <div style="border: 1px solid  black">This is a div tag</div> and more text.
+        <br>
+        <!-- br is how you can separate lines with the enter key -->
+        Here is more text <span style="border: 1px solid red">This is a span tag</span> and more text.
+
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+html {
+    /* resetting just in case */
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    /* set the default font to be Raleway */
+    font-family: 'Raleway', sans-serif;
+    /* set the background image to a gradient color */
+    background-image: linear-gradient(to bottom, #858c90, #bbb );
+
+    /* make so element don't wrap */
+    white-space: nowrap;
+}
+
+div.trello-list {
+    /* change background color */
+    background-color: #ddd;
+    /* fix the width */
+    width: 300px;
+    /* round edge to 2px and 3px */
+    /* 2px top left and bottom right */
+    /* 3px top right and bottom left */
+    border-radius: 2px 3px;
+    /* make the cards go across instead of down */
+    display: inline-block;
+
+    /* align the cards to the top */
+    vertical-align: top;
+
+    /* margin right 10px */
+    margin-right: 10px;
+}
+
+header > h1, header > p {
+    /* make text go horizontal */
+    display: inline-block;
+    /* change the color  */
+    color: rgba(255, 255, 255, 0.8);
+    /* vertical line on the right */
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    /* padding on the right */
+    padding-right: 20px;
+    /* height to 20 px */
+    height: 20px;
+}
+
+header > h1 {
+    /* set font to 110% */
+    font-size: 110%;
+    /* set to uppercase */
+    text-transform: uppercase;
+}
+div.trello-list h2 {
+    /* push the h2 over from the edge */
+    margin: 8px;
+/* make font bold */
+    font-weight: bold;
+
+}
+
+div.trello-list ol {
+    margin: 0;
+    padding: 0;
+}
+
+div.trello-list ol li {
+    /* remove numbering */
+    list-style: none;
+    /* background color to white */
+    background-color: white;
+    /* add spacing to bottom of each li */
+    margin-bottom: 10px;
+    /* round the edges */
+    border-radius: 1px;
+
+    /* move words over 8px */
+    padding: 8px;
+    /* set font to 90% of default */
+    font-size: 0.9rem;
+
+    /* fix to wrap the text */
+    white-space: normal;
+
+   
+}
+
+div.trello-list ol li:hover {
+     /* on hover background #f5f6f7 font #092d42 */
+     background-color: #f5f6f7;
+     color: #092d42;
+}
+
+div.trello-list a {
+    /* remove underline */
+    text-decoration: none;
+    color: #888;
+    /* spacing */
+    padding: 8px 0px 8px 8px;
+}
+
+
+.labels span {
+    display: inline-block;
+    width: 35px;
+    height: 8px;
+    border-radius: 3px;
+    vertical-align: top;
+}
+
+.label.pathway {
+    background-color: red;
+}
+
+.label.general {
+    background-color: orange;
+}
+
+.label.individual {
+    background-color: green;
+}
+
+.label.pair {
+    background-color: teal;
+}
