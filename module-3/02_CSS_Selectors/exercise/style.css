@@ -22,6 +22,9 @@ aside {
   border-right: solid 1px rgba(0, 173, 238, 0.4);
   height: 100vh;
   width: 200px;
+  margin: 0;
+  top: 0;
+  left: 0;
 }
 
 aside>img {
@@ -54,11 +57,10 @@ ul>li:first-child a {
 }
 
 main {
-  padding-left: 200px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 5px;
-  height: 100%;
+  margin-left: 200px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
 }
 
 header>img {
