@@ -1,0 +1,24 @@
+body {
+    background-color: cyan;
+}
+h1{
+    color:darkblue;
+}
+
+
+ul {
+    text-align: center;
+}
+
+li {
+    /* text-align: center; */
+    display: inline-block; 
+    /* display: inline-block made each li go horizontal instead of vertical */
+    padding: 20px;
+}
+
+
+
+h1{
+    color:rgb(225, 33, 14);
+}

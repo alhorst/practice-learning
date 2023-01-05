@@ -35,7 +35,8 @@ M2D16 -- Security - https://techelevator.zoom.us/rec/share/mp-tiSBdM_bZNjr06gsOx
 M2Capstone Day 1 - https://techelevator.zoom.us/rec/share/MK9WoVnLWA55g7wXlDQiNypf8Etp-ZeRa-549MKOTtCu6Rp0hIzdLF5pQ1Y5O7Yy.T72Y7YlWKCdE3amJ
 M2Capstone Day 2 - https://drive.google.com/file/d/1MHj2p7qSWiwOo0CgALyLhKY8k-b6npQz/view?usp=sharing
 M2Capstone Day 3 - https://techelevator.zoom.us/rec/share/_-iiMpM-wmbcuusDpCNcf8qQoeklnZyKEA17MyDBoZM2YiN4mDSecEbrZp22aDne.n4ETxp4OQuqV9Xw4
-M1D1 -- Intro to HTML - https://techelevator.zoom.us/rec/share/2O3HRn-syfCRlWGM3zm9Lh_r_DpI-uFlRn_xyHLs9epOCRtN-UUj755eEHyKixtn.BqJ9vlkSbwusFMZc
+M3D1 -- Intro to HTML - https://techelevator.zoom.us/rec/share/2O3HRn-syfCRlWGM3zm9Lh_r_DpI-uFlRn_xyHLs9epOCRtN-UUj755eEHyKixtn.BqJ9vlkSbwusFMZc
+M3D2 -- CSS Selectors - https://techelevator.zoom.us/rec/share/jPTW7V5azXv2Bixjg5eelIUmJX9Sksz1poZbJdzQ1P6FgJ6xQ8zzpy-NUaAe1zKu.oig3k03EPHCdEbD0
 
 
 
