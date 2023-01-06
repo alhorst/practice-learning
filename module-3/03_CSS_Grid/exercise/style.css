@@ -121,8 +121,6 @@ header img {
 @media only screen and (max-width: 450px) {
     #main-grid {
         grid-template-columns: 1fr;
-        /*text-align: center;
-        align-items: center;*/
         grid-template-areas:
             "headline"
             "student-picture"
