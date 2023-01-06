@@ -38,6 +38,6 @@ M2Capstone Day 3 - https://techelevator.zoom.us/rec/share/_-iiMpM-wmbcuusDpCNcf8
 M3D1 -- Intro to HTML - https://techelevator.zoom.us/rec/share/2O3HRn-syfCRlWGM3zm9Lh_r_DpI-uFlRn_xyHLs9epOCRtN-UUj755eEHyKixtn.BqJ9vlkSbwusFMZc
 M3D2 -- CSS Selectors - https://techelevator.zoom.us/rec/share/jPTW7V5azXv2Bixjg5eelIUmJX9Sksz1poZbJdzQ1P6FgJ6xQ8zzpy-NUaAe1zKu.oig3k03EPHCdEbD0
 M3D3 -- Grid and Flexbox - https://techelevator.zoom.us/rec/share/vT1J9a0vyz6EQ2t2yaiEo-tIUOIDvr4sCHRvviyIrV_uQjbfK-xFdxilHM_KJDaH.uxZrDEDcW69l0ynf
-
+M3D6 -- Intro to JS - https://techelevator.zoom.us/rec/share/778p6qrL5O3sRkM7Yxx8dZxLel1EPsfhTCUgX0L7jkH_d_G_7tCffylp_H0rMQ5s.hljCiJMtNccLmhpI
 
 
