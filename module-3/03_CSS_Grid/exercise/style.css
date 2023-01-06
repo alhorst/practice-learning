@@ -7,10 +7,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-        'headline headline student-picture'
-        'student-quote student-quote student-picture'
-        'student-profile student-profile student-contact'
-        'experience-grid experience-grid experience-grid';
+        "headline headline student-picture"
+        "student-quote student-quote student-picture"
+        "student-profile student-profile student-contact"
+        "experience-grid experience-grid experience-grid";
     row-gap: 20px;
     column-gap: 50px;
     align-items: center;
@@ -24,14 +24,13 @@
     text-align: center;
 }
 
-
 #experience-grid {
     display: grid;
-    grid-template-columns: 500px 500px;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        'experience-code experience-code'
-        'experience-db experience-db'
-        'experience-web experience-design';
+        "experience-code experience-code"
+        "experience-db experience-db"
+        "experience-web experience-design";
     row-gap: 20px;
     column-gap: 50px;
     grid-area: experience-grid;
@@ -125,45 +124,43 @@ header img {
         /*text-align: center;
         align-items: center;*/
         grid-template-areas:
-            'headline'
-            'student-picture'
-            'student-contact'
-            'student-quote'
-            'student-profile'
-            'experience-grid';
-        row-gap: 20px;
+            "headline"
+            "student-picture"
+            "student-contact"
+            "student-quote"
+            "student-profile"
+            "experience-grid";
     }
 
     #experience-grid {
-        grid-template-columns: 100%;
+        grid-template-columns: 1fr;
         grid-template-areas:
-            'experience-code'
-            'experience-web'
-            'experience-db'
-            'experience-design';
-        row-gap: 20px;
+            "experience-code"
+            "experience-web"
+            "experience-db"
+            "experience-design";
     }
 }
 
 /*Tablet*/
 @media only screen and (max-width: 1024px) {
     #main-grid {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            'headline headline'
-            'student-quote student-picture'
-            'student-quote student-contact'
-            'student-profile student-profile'
-            'experience-grid experience-grid';
+            "headline headline"
+            "student-quote student-picture"
+            "student-quote student-contact"
+            "student-profile student-profile"
+            "experience-grid experience-grid";
         row-gap: 20px;
         column-gap: 35px;
     }
 
     #experience-grid {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            'experience-code experience-web'
-            'experience-db experience-design';
+            "experience-code experience-web"
+            "experience-db experience-design";
         row-gap: 20px;
         column-gap: 20px;
     }
