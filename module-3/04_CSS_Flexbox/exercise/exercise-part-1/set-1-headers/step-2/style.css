@@ -1,3 +1,14 @@
+header,
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+
+
 body {
   margin: 20px;
   padding: 0
