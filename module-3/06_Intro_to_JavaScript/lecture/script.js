@@ -10,8 +10,17 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const DAYS_PER_WEEK = 7;
+  console.log('There are ' + DAYS_PER_WEEK + 'days per week.');
   // Declares a variable those value can be changed
+  let daysPerMonth = 31;
+  //use ` for template literal so we don't have to concat
+  console.log(`There are $(daysPerMonth) days in January`);
   // Declares a variable that will always be an array
+  const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
+    'Saturday', 'Sunday'];
+
+  console.log(WEEK_DAYS); //remember we don't need semicolon
 }
 
 /**
