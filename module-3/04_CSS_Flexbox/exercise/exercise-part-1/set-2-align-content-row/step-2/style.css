@@ -1,3 +1,8 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
 body {
   margin: 20px;
   padding: 0;

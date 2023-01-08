@@ -9,6 +9,11 @@ body {
   padding: 20px;
   margin-bottom: 20px;
   border: solid 1px #555;
+  display: flex;
+}
+
+body>.bio:nth-of-type(2) {
+  flex-direction: row-reverse;
 }
 
 .bio img {

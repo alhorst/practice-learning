@@ -1,5 +1,15 @@
+header {
+  display: flex;
+}
 
+nav {
+  flex-grow: 1;
+}
 
+ul {
+  display: flex;
+  justify-content: center;
+}
 
 body {
   margin: 20px;

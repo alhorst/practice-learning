@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 body {
   margin: 20px;
   padding: 0;
@@ -15,4 +21,3 @@ body {
   color: #fff;
   border: solid 1px #777;
 }
-
