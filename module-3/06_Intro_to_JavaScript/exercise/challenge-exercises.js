@@ -12,6 +12,7 @@
         iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number
 */
 
+
 /*
 2. **titleCase** Write a function that will convert a string into title case, given an optional 
     list of exceptions (minor words). The list of minor words will be given as a string with each 
