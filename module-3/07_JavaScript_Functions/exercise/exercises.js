@@ -124,8 +124,7 @@ function getFullAddressesOfProperties(objectsArray) {
      objectsArray.map(({
           streetNumber, streetName, streetType, city, state, zip }) => {
 
-          let newAddress = (`${streetNumber} ${streetName} ${streetType} ${city} ${state} ${zip}`);
-          return newAddress;
+          return {streetNumber, streetName, streetType, city, state, zip}
      });
 
 }
