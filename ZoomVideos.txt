@@ -40,4 +40,4 @@ M3D2 -- CSS Selectors - https://techelevator.zoom.us/rec/share/jPTW7V5azXv2Bixjg
 M3D3 -- Grid and Flexbox - https://techelevator.zoom.us/rec/share/vT1J9a0vyz6EQ2t2yaiEo-tIUOIDvr4sCHRvviyIrV_uQjbfK-xFdxilHM_KJDaH.uxZrDEDcW69l0ynf
 M3D6 -- Intro to JS - https://techelevator.zoom.us/rec/share/778p6qrL5O3sRkM7Yxx8dZxLel1EPsfhTCUgX0L7jkH_d_G_7tCffylp_H0rMQ5s.hljCiJMtNccLmhpI
 M3D7 -- JS Functions - https://techelevator.zoom.us/rec/share/1e3YEREEekwUe1nUgLgE-U2sBtRk2k46ZEAb64oClOtBbG0FE1CaRixHsRhW6Nef.kxUlRmla_NFK3Um3
-
+M3D8 -- DOM - https://techelevator.zoom.us/rec/share/rTMKiM6HOaPPctMwdSxxp9hfNAipKO69qEqBF_Q6r5GupscEvFABZcriUal3E29i.d8jq6IQPw1HaELE4
