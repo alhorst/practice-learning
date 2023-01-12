@@ -52,13 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
         task.querySelector('i').classList.add('completed');
       }
     });
-    tasks.addEventListener('dblclick', () => {
+    task.addEventListener('dblclick', () => {
       if (task.classList.contains('completed')) {
         task.classList.remove('completed');
 
         task.querySelector('i').classList.remove('completed');
       }
-    })
+    });
   });
 
   const completeAll = document.getElementById('btnCompleteAll');
