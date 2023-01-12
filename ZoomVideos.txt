@@ -42,5 +42,6 @@ M3D6 -- Intro to JS - https://techelevator.zoom.us/rec/share/778p6qrL5O3sRkM7Yxx
 M3D7 -- JS Functions - https://techelevator.zoom.us/rec/share/1e3YEREEekwUe1nUgLgE-U2sBtRk2k46ZEAb64oClOtBbG0FE1CaRixHsRhW6Nef.kxUlRmla_NFK3Um3
 M3D8 -- DOM - https://techelevator.zoom.us/rec/share/rTMKiM6HOaPPctMwdSxxp9hfNAipKO69qEqBF_Q6r5GupscEvFABZcriUal3E29i.d8jq6IQPw1HaELE4
 M3D9 -- Event handling - https://techelevator.zoom.us/rec/share/rngDK1IuoZwZwiFbSiJIIEh1a302LhGaOe53njSdg22aU446aN9i2cDUaj0K5RZn.pqbWDbSiRUhB1lT6
+M3D10 -- Review - https://techelevator.zoom.us/rec/share/laT4A4DAnS2jzOcowO8K0tkJL38VEwx10uktWx0r5njpM50lcVd1llAMIFYvt9_t.OqiprMe-nlx3qkxR
 
 
