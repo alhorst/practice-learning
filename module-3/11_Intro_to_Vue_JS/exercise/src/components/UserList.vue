@@ -1,20 +1,20 @@
 <template>
   <table id="tblUsers">
     <thead>
-    <tr>
+      <tr>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Username</th>
         <th>Email Address</th>
         <th>Status</th>
-    </tr>
+      </tr>
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" id="firstNameFilter"/></td>
-        <td><input type="text" id="lastNameFilter"/></td>
-        <td><input type="text" id="usernameFilter"/></td>
-        <td><input type="text" id="emailFilter"/></td>
+        <td><input type="text" id="firstNameFilter" v-model="search.firstName" /></td>
+        <td><input type="text" id="lastNameFilter" v-model="search.lastName" /></td>
+        <td><input type="text" id="usernameFilter" v-model="search.username" /></td>
+        <td><input type="text" id="emailFilter" v-model="search.emailAddress" /></td>
         <td>
           <select id="statusFilter">
             <option value="">Show All</option>
@@ -24,6 +24,13 @@
         </td>
       </tr>
       <!-- user listing goes here -->
+      <tr v-for="user in users" v-bind:key="user.id" v-bind:class="{ 'inactive disabled': user.status === 'Inactive' }">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.emailAddress }}</td>
+        <td>{{ user.status }}</td>
+      </tr>
     </tbody>
   </table>
 </template>
@@ -33,6 +40,13 @@ export default {
   name: 'user-list',
   data() {
     return {
+      search: {
+        firstName: '',
+        lastName: '',
+        username: '',
+        emailAddress: '',
+        status: ''
+      },
       users: [
         { firstName: 'John', lastName: 'Smith', username: 'jsmith', emailAddress: 'jsmith@gmail.com', status: 'Active' },
         { firstName: 'Anna', lastName: 'Bell', username: 'abell', emailAddress: 'abell@yahoo.com', status: 'Active' },
@@ -42,6 +56,10 @@ export default {
         { firstName: 'Mark', lastName: 'Smith', username: 'msmith', emailAddress: 'msmith@foo.com', status: 'Inactive' }
       ]
     }
+  },
+  computed: {
+    filteredList() {
+    }
   }
 }
 </script>
@@ -49,18 +67,23 @@ export default {
 <style scoped>
 table {
   margin-top: 20px;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
+
 th {
   text-transform: uppercase
 }
+
 td {
   padding: 10px;
 }
+
 tr.disabled {
   color: red;
 }
-input, select {
+
+input,
+select {
   font-size: 16px;
 }
 </style>
