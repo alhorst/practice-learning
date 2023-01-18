@@ -44,4 +44,5 @@ M3D8 -- DOM - https://techelevator.zoom.us/rec/share/rTMKiM6HOaPPctMwdSxxp9hfNAi
 M3D9 -- Event handling - https://techelevator.zoom.us/rec/share/rngDK1IuoZwZwiFbSiJIIEh1a302LhGaOe53njSdg22aU446aN9i2cDUaj0K5RZn.pqbWDbSiRUhB1lT6
 M3D10 -- Review - https://techelevator.zoom.us/rec/share/laT4A4DAnS2jzOcowO8K0tkJL38VEwx10uktWx0r5njpM50lcVd1llAMIFYvt9_t.OqiprMe-nlx3qkxR
 M3D11 -- Intro to Vue - https://techelevator.zoom.us/rec/share/qP5EQ8uUUtVvKyr9l4L6_GRSc87a15HJHwe279LA8OdVVgNRtgpFHGK-ha9ec51r.0gUEenbXb6Nx1Gpv
+M3D12 -- Vue Event Handling - https://techelevator.zoom.us/rec/share/vQNsbP0-UpLvWs5INeJuOeRJC4HMOp6YMwZMG7s38yT_fjgKXyQnNkm_wdbtvOn7.cQ6c4Pkf7RWzCVFU
 
