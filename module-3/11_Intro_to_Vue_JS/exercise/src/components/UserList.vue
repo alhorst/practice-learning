@@ -11,12 +11,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" id="firstNameFilter" v-model="search.firstName" /></td>
-        <td><input type="text" id="lastNameFilter" v-model="search.lastName" /></td>
-        <td><input type="text" id="usernameFilter" v-model="search.username" /></td>
-        <td><input type="text" id="emailFilter" v-model="search.emailAddress" /></td>
+        <td><input type="text" id="firstNameFilter" v-model="filter.firstName" /></td>
+        <td><input type="text" id="lastNameFilter" v-model="filter.lastName" /></td>
+        <td><input type="text" id="usernameFilter" v-model="filter.username" /></td>
+        <td><input type="text" id="emailFilter" v-model="filter.emailAddress" /></td>
         <td>
-          <select id="statusFilter">
+          <select id="statusFilter" v-model="filter.status">
             <option value="">Show All</option>
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
@@ -41,7 +41,7 @@ export default {
   name: 'user-list',
   data() {
     return {
-      search: {
+      filter: {
         firstName: '',
         lastName: '',
         username: '',
