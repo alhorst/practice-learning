@@ -6,51 +6,70 @@
 
     <div class="well-display">
       <div class="well">
-        <span class="amount">{{ averageRating }}</span>
+        <span class="amount" v-on:click="filter = 0">{{ averageRating }}</span>
         Average Rating
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfOneStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 1">{{ numberOfOneStarReviews }}</span>
         1 Star Review{{ numberOfOneStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfTwoStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 2">{{ numberOfTwoStarReviews }}</span>
         2 Star Review{{ numberOfTwoStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfThreeStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 3">{{ numberOfThreeStarReviews }}</span>
         3 Star Review{{ numberOfThreeStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfFourStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 4">{{ numberOfFourStarReviews }}</span>
         4 Star Review{{ numberOfFourStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfFiveStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 5">{{ numberOfFiveStarReviews }}</span>
         5 Star Review{{ numberOfFiveStarReviews === 1 ? '' : 's' }}
       </div>
     </div>
+    <a href="#" v-on:click="showForm = true">Show Form</a>
+    <form v-show="showForm">
+      <div class="form-element">
+        <label for="reviewer">Name:</label>
+        <input type="text" id="reviewer" v-model="newReview.reviewer">
+      </div>
+      <div class="form-element">
+        <label for="title">Title:</label>
+        <input type="text" id="title" v-model="newReview.title">
+      </div>
+      <div class="form-element">
+        <label for="title">Rating:</label>
+        <select name="rating" id="rating" v-model.number="newReview.rating">
+          <option value="1">1 Star Review</option>
+          <option value="2">2 Star Review</option>
+          <option value="3">3 Star Review</option>
+          <option value="4">4 Star Review</option>
+          <option value="5">5 Star Review</option>
+        </select>
+      </div>
+      <div class="form-element">
+        <label for="review">Review:</label>
+        <textarea name="review" id="review" v-model="newReview.review"></textarea>
+      </div>
+    </form>
+    <input type="submit" value="Add Review" v-on:click.prevent="addNewReview">
+    <input type="button" value="Cancel" v-on:click="resetForm">
 
-    <div
-      class="review"
-      v-bind:class="{ favorited: review.favorited }"
-      v-for="review in reviews"
-      v-bind:key="review.id"
-    >
+
+    <div class="review" v-bind:class="{ favorited: review.favorited }" v-for="review in filteredReviews"
+      v-bind:key="review.id">
       <h4>{{ review.reviewer }}</h4>
       <div class="rating">
-        <img
-          src="../assets/star.png"
-          v-bind:title="review.rating + ' Star Review'"
-          class="ratingStar"
-          v-for="n in review.rating"
-          v-bind:key="n"
-        />
+        <img src="../assets/star.png" v-bind:title="review.rating + ' Star Review'" class="ratingStar"
+          v-for="n in review.rating" v-bind:key="n" />
       </div>
       <h3>{{ review.title }}</h3>
 
@@ -73,6 +92,8 @@ export default {
       description:
         "Host and plan the perfect cigar party for all of your squirrelly friends.",
       newReview: {},
+      showForm: false,
+      filter: 0,
       reviews: [
         {
           reviewer: "Malcolm Gladwell",
@@ -110,6 +131,15 @@ export default {
     };
   },
   computed: {
+    filteredReviews() {
+      return this.reviews.filter((review) => {
+        if (this.filter === 0) {
+          return true;
+        } else {
+          return this.filter === review.rating;
+        }
+      })
+    },
     averageRating() {
       let sum = this.reviews.reduce((currentSum, review) => {
         return currentSum + review.rating;
@@ -141,6 +171,23 @@ export default {
         return currentCount + (review.rating === 5);
       }, 0);
     }
+  },
+  methods: {
+    addNewReview() {
+      this.reviews.unshift(this.newReview);
+      this.resetForm();
+    },
+
+    resetForm() {
+      this.showForm = false;
+      this.newReview = {};
+    },
+
+    numberOfReviews(reviews, starType) {
+      return reviews.reduce((currentCount, review) => {
+        return currentCount + (review.rating === starType ? 1 : 0);
+      }, 0);
+    },
   }
 };
 </script>
@@ -207,21 +254,27 @@ div.main div.review h4 {
 div.form-element {
   margin-top: 10px;
 }
-div.form-element > label {
+
+div.form-element>label {
   display: block;
 }
-div.form-element > input, div.form-element > select {
+
+div.form-element>input,
+div.form-element>select {
   height: 30px;
   width: 300px;
 }
-div.form-element > textarea {
+
+div.form-element>textarea {
   height: 60px;
   width: 300px;
 }
-form > input[type=button] {
+
+form>input[type=button] {
   width: 100px;
 }
-form > input[type=submit] {
+
+form>input[type=submit] {
   width: 100px;
   margin-right: 10px;
 }
