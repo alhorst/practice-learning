@@ -147,30 +147,20 @@ export default {
       return (sum / this.reviews.length).toFixed(2);
     },
     numberOfOneStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 1);
-      }, 0);
+      return this.numberOfReviews(1);
     },
     numberOfTwoStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 2);
-      }, 0);
+      return this.numberOfReviews(2);
     },
     numberOfThreeStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 3);
-      }, 0);
+      return this.numberOfReviews(3);
     },
     numberOfFourStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 4);
-      }, 0);
+      return this.numberOfReviews(4);
     },
     numberOfFiveStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 5);
-      }, 0);
-    }
+      return this.numberOfReviews(5);
+    },
   },
   methods: {
     addNewReview() {
@@ -183,9 +173,9 @@ export default {
       this.newReview = {};
     },
 
-    numberOfReviews(reviews, starType) {
+    numberOfReviews(numOfStars) {
       return reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === starType ? 1 : 0);
+        return currentCount + (review.rating === numOfStars);
       }, 0);
     },
   }
