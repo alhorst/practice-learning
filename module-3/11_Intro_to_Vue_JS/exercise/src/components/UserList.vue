@@ -24,7 +24,8 @@
         </td>
       </tr>
       <!-- user listing goes here -->
-      <tr v-for="user in users" v-bind:key="user.id" v-bind:class="{ 'inactive disabled': user.status === 'Inactive' }">
+      <tr v-for="user in filteredList" v-bind:key="user.id"
+        v-bind:class="{ 'inactive disabled': user.status === 'Inactive' }">
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.username }}</td>
@@ -59,9 +60,44 @@ export default {
   },
   computed: {
     filteredList() {
+      let filteredUsers = this.users;
+      if (this.filter.firstName != "") {
+        filteredUsers = filteredUsers.filter((user) =>
+          user.firstName
+            .toLowerCase()
+            .includes(this.filter.firstName.toLowerCase())
+        );
+      }
+      if (this.filter.lastName != "") {
+        filteredUsers = filteredUsers.filter((user) =>
+          user.lastName
+            .toLowerCase()
+            .includes(this.filter.lastName.toLowerCase())
+        );
+      }
+      if (this.filter.username != "") {
+        filteredUsers = filteredUsers.filter((user) =>
+          user.username
+            .toLowerCase()
+            .includes(this.filter.username.toLowerCase())
+        );
+      }
+      if (this.filter.emailAddress != "") {
+        filteredUsers = filteredUsers.filter((user) =>
+          user.emailAddress
+            .toLowerCase()
+            .includes(this.filter.emailAddress.toLowerCase())
+        );
+      }
+      if (this.filter.status != "") {
+        filteredUsers = filteredUsers.filter((user) =>
+          user.status === this.filter.status
+        );
+      }
+      return filteredUsers;
     }
   }
-}
+};
 </script>
 
 <style scoped>
