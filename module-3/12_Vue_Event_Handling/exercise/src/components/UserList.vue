@@ -18,8 +18,7 @@
             <input
               type="checkbox"
               id="selectAll"
-              v-on:change="selectAllUsers"
-              v-bind:checked="allChecked"
+              v-on:change="selectAllUsers($event)"
             />
           </td>
           <td>
@@ -57,7 +56,10 @@
               type="checkbox"
               name="selectedUsers"
               v-model="selectedUserIDs"
-              v-bind:value="user.id"
+              v-bind:checked="
+                selectedUserIDs.includes(Number.parseInt(user.id))
+              "
+              v-bind:value="Number.parseInt(user.id)"
             />
           </td>
           <td>{{ user.firstName }}</td>
@@ -77,19 +79,19 @@
     <div class="all-actions">
       <button
         v-bind:disabled="actionButtonDisabled"
-        v-on:click="enableSelectedUsers"
+        v-on:click="enableSelectedUsers()"
       >
         Enable Users
       </button>
       <button
         v-bind:disabled="actionButtonDisabled"
-        v-on:click="disableSelectedUsers"
+        v-on:click="disableSelectedUsers()"
       >
         Disable Users
       </button>
       <button
         v-bind:disabled="actionButtonDisabled"
-        v-on:click="deleteSelectedUsers"
+        v-on:click="deleteSelectedUsers()"
       >
         Delete Users
       </button>
@@ -114,7 +116,7 @@
         <label for="emailAddress">Email Address:</label>
         <input type="text" name="emailAddress" v-model="newUser.emailAddress" />
       </div>
-      <button type="submit" class="btn save" v-on:submit.prevent="saveUser">
+      <button type="submit" class="btn save" v-on:click.prevent="saveUser">
         Save User
       </button>
     </form>
@@ -126,6 +128,8 @@ export default {
   name: "user-list",
   data() {
     return {
+      showForm: false,
+      selectedUserIDs: [],
       filter: {
         firstName: "",
         lastName: "",
@@ -192,8 +196,6 @@ export default {
           status: "Disabled",
         },
       ],
-      selectedUserIDs: [],
-      showForm: false,
     };
   },
   methods: {
@@ -230,46 +232,36 @@ export default {
       });
     },
     enabledSelectedUsers() {
-      for (let i = 0; i < this.users.length; i++) {
-        for (let j = 0; j < this.selectedUserIDs.length; j++) {
-          if (this.users[i].id === this.selectedUserIDs[j]) {
-            if (this.users.status === "Disabled") {
-              this.users[i].status = "Active";
-            }
-          }
-        }
-      }
+      this.changeStatus("Active");
     },
     disableSelectedUsers() {
-      for (let i = 0; i < this.users.length; i++) {
-        for (let j = 0; j < this.selectedUserIDs.length; j++) {
-          if (this.users[i].id === this.selectedUserIDs[j]) {
-            if (this.users.status === "Active") {
-              this.users[i].status = "Disabled";
-            }
-          }
-        }
-      }
+      this.changeStatus("Disabled");
     },
     deleteSelectedUsers() {
-      for (let i = 0; i < this.users.length; i++) {
-        for (let j = 0; j < this.selectedUserIDs.length; j++) {
-          if (this.users[i].id === this.selectedUserIDs[j]) {
-            if (this.users[i].status === "Delete") {
+      this.changeStatus("Delete");
+    },
+    changeStatus(statusToChange) {
+      for (let i = 0; i < this.selectedUserIDs.length; i++) {
+        for (let j = 0; j < this.users.length; j++) {
+          if (this.users[j].id === this.selectedUserIDs[i]) {
+            if (statusToChange === "Active" || statusToChange === "Disabled") {
+              this.users[j].status = statusToChange;
+            } else if (statusToChange === "Delete") {
               this.users.splice(i, 1);
             }
           }
         }
       }
+      //this.selectedUserIDs = [];
     },
-    selectAllUsers() {
-      if (this.allChecked) {
-        this.selectedUserIDs = [];
-      } else {
+    selectAllUsers(event) {
+      if (event.target.checked) {
         this.selectedUserIDs = [];
         for (let i = 0; i < this.users.length; i++) {
           this.selectedUserIDs.push(this.users[i].id);
         }
+      } else {
+        this.selectedUserIDs = [];
       }
     },
   },
@@ -281,17 +273,17 @@ export default {
         return false;
       }
     },
-    allChecked() {
-      let compareCheck = 0;
-      for (let i = 0; i < this.users.length; i++) {
-        for (let j = 0; j < this.selectedUserIDs.length; j++) {
-          if (this.users[i].id === this.selectedUserIDs[j]) {
-            compareCheck++;
-          }
-        }
-      }
-      return compareCheck === this.users.length;
-    },
+    // allChecked() {
+    //   let compareCheck = 0;
+    //   for (let i = 0; i < this.users.length; i++) {
+    //     for (let j = 0; j < this.selectedUserIDs.length; j++) {
+    //       if (this.users[i].id === this.selectedUserIDs[j]) {
+    //         compareCheck++;
+    //       }
+    //     }
+    //   }
+    //   return compareCheck === this.users.length;
+    // },
     filteredList() {
       let filteredUsers = this.users;
       if (this.filter.firstName != "") {
