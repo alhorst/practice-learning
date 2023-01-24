@@ -7,7 +7,7 @@
         >Back to Products</router-link
       >&nbsp;|
       <router-link
-        v-bind:to="{ name: 'add-review', params: { id: product.id } }"
+        v-bind:to="{ name: 'add-review', params: { id: product.id } }" 
         >Add Review</router-link
       >
     </div>
