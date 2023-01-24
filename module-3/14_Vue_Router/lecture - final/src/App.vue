@@ -1,17 +1,14 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>
-      <router-link v-bind:to="{ name: 'my-books' }">My Books</router-link>
-    </nav>
+  <div>
+    <p>Hi there!</p>
+    <!-- display the view associated with
+    whatever path in the tag called router-view -->
     <router-view />
   </div>
 </template>
 
 <script>
-export default {
-  name: "app",
-};
+export default {};
 </script>
 
 <style>
@@ -21,6 +18,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 60px;
+  max-width: 800px;
+  margin: 60px auto 0 auto;
 }
 </style>
