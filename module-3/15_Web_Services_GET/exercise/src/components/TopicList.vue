@@ -7,11 +7,19 @@
 </template>
 
 <script>
+import TopicService from '../services/TopicService.js';
 export default {
   name: 'topic-list',
   data() {
     return {
       topics: []
+    }
+  },
+  methods: {
+    loadData() {
+      TopicService.listTopics().then((response) => {
+        this.topics = response.data;
+      });
     }
   }
 }
@@ -23,11 +31,13 @@ export default {
   margin: 0 auto;
   max-width: 600px;
 }
+
 .topic {
   font-size: 24px;
   border-bottom: 1px solid #f2f2f2;
   padding: 10px 20px;
 }
+
 .topic:last-child {
   border: 0px;
 }
