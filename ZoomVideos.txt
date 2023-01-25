@@ -48,3 +48,5 @@ M3D12 -- Vue Event Handling - https://techelevator.zoom.us/rec/share/vQNsbP0-UpL
 M3D13 -- Vue Components - https://techelevator.zoom.us/rec/share/bpHQnIj81ZbarHJpx1Rwtz7yvCGd2LzIR44UOsNY5bGx_84k-pBL5kCI2235aBAJ.-dQtouvs8VZtMmIi
 M3D14 -- Vue Router - https://techelevator.zoom.us/rec/share/ZtbTdEQQ3q4d3uw2bTmHv_YIhXIo_x7DpAJt5cVeNRAhfmZ4Pa8nYYWmUeuPuCpj.gZn8ebFoUWWvWUmN
 M3D15 -- Vue GET - https://techelevator.zoom.us/rec/share/Pco2yDsO0xYBNFe-F5cY25UY5CMKU2fSWXwrS__zVbAa1S95UquIldmlPKuoZ9-P.bJsAtTRf1OPyt6X_
+M3D16 - VUE POST - https://techelevator.zoom.us/rec/share/MLfGGZP7wWGr5gmr2nLbwVr7dBgRAOav0yDJx-EXYk5u1akUVN8MfeE_IG4fQKE.5_ALuN3Vz6oJa3qI
+
