@@ -19,13 +19,20 @@ export default {
     return {
       topic: {
         id: Math.floor(Math.random() * (1000 - 100) + 100),
-        title: ""
-      }
+        title: "",
+      },
+      errorMsg: "",
     };
   },
   methods: {
-    saveTopic() {}
-  }
+    saveTopic() {
+      topicService.addTopic(this.topic).then((response) => {
+        if (response.status === 201) {
+          this.$router.push({ name: "Home" });
+        }
+      });
+    },
+  },
 };
 </script>
 
