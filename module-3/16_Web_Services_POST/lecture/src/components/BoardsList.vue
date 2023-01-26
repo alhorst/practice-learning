@@ -77,6 +77,10 @@ export default {
       });
     },
     saveNewBoard() {
+      boardsService.addBoard(this.newBoard)
+      .then((response) => {
+
+      })
 
     },
     randomBackgroundColor() {
