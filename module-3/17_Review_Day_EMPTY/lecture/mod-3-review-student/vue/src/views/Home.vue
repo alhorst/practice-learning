@@ -4,10 +4,14 @@
     <div class="prompt">What would you like to do?</div>
     <ul>
       <li class="choice">
-        View your Balance
+        <router-link v-bind:to="{ name: 'balance' }">
+          View your Balance
+        </router-link>
       </li>
       <li class="choice">
+        <router-link v-bind:to="{ name: 'customers' }">
         View Customer List
+        </router-link>
       </li>
     </ul>
   </div>
@@ -29,7 +33,8 @@ export default {
   width: 70%;
 }
 
-.choice, .choice a {
+.choice,
+.choice a {
   color: blue;
   font-weight: bold;
 }

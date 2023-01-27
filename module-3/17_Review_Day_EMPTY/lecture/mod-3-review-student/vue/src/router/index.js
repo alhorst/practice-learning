@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+import Balance from '../views/Balance/vue'
 
 Vue.use(Router)
 
@@ -53,19 +54,34 @@ const router = new Router({
         requiresAuth: false
       }
     },
-
+    {
+      path: "/balance",
+      name: "balance",
+      component: Balance,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/customers",
+      name: "customers",
+      component: Customers,
+      meta: {
+        requiresAuth: false
+      },
+    }
   ]
 })
 
 router.beforeEach((to, from, next) => {
-  // Determine if the route requires Authentication
+  // determine if the route requires authentication
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
 
-  // If it does and they are not logged in, send the user to "/login"
+  // if it does and user is not logged in, send the user to "/login"
   if (requiresAuth && store.state.token === '') {
     next("/login");
   } else {
-    // Else let them go to their next destination
+    // else let them go to their next destination
     next();
   }
 });
